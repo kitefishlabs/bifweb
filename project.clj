@@ -10,7 +10,9 @@
                  [org.clojure/clojurescript "1.7.228"]
                  [org.clojure/core.async "0.2.374"
                   :exclusions [org.clojure/tools.reader]]
-                 [reagent "0.5.1"]]
+                 [reagent "0.5.1"]
+                 [secretary "1.2.3"]
+                 [cljs-ajax "0.5.4"]]
   
   :plugins [[lein-figwheel "0.5.2"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
@@ -24,7 +26,7 @@
                 :source-paths ["src"]
 
                 ;; If no code is to be run, set :figwheel true for continued automagical reloading
-                :figwheel {:on-jsload "bifweb.core/on-js-reload"}
+                :figwheel {:on-jsload "bifweb.core/fig-reload"}
 
                 :compiler {:main bifweb.core
                            :asset-path "js/compiled/out"
