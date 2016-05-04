@@ -23,9 +23,30 @@
 (defn header-jumbotron []
   [:div.header
    [:div.jumbotron
-   	[:img.banner 
-   		{ :src "/img/bif_2016_logo_only.png"
+   	[:img 
+   		{ :class "banner"
+   			:src "/img/bif_2016_logo_only.png"
    			:width "960px" }]
+   	[:div
+   		{:class "social-links"}
+   		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
+	   		[:img 
+  	 			{	:src "/img/Facebook.gif",
+   				 	:width "32px",
+  	 				:class "social-circle"
+  	 				:alt "fb" }]]
+   		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
+	   		[:img 
+  	 			{	:src "/img/Twitter.gif"
+   				 	:width "32px"
+   				 	:class "social-circle"
+   				 	:alt "tw" }]]
+   		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
+   			[:img 
+   				{	:src "/img/Soundcloud.png"
+   			 		:width "32px"
+   			 		:class "social-circle"
+   				 	:alt "sc" }]]]
     ; [:h1 "Buffalo Infringement"]
     ; [:p "11 days of art under the radar"]
     ]])

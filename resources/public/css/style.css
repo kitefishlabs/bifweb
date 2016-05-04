@@ -1,12 +1,34 @@
-/* some style */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
+.jumbotron {
+	padding: 25px 0 5px 0;
+	min-width: 960px;
+}
 
-.featured {
+.social-links {
+	float: right;
+	margin-top: -20px;
+	margin-right: 100px;
+	a {
+		/*width: 32px;*/
+		/*height: 32px;*/
+		cursor: crosshair;
+		z-index: 1000;
+	} ;
+}
+
+.third-box {
 	display: inline-block;
-	width: 32%;
-	height: 300px;
+	max-width: 32%;
+	min-width: 20%;
+	min-height: 200px;
 	margin: 5px;
-
+	float: left;
+	background-color: #EDFAFA;
 }
 
 #featured-left {
@@ -16,6 +38,8 @@
 	background-color: #33FFCC;
 }
 #featured-right {
-	background-color: #FF00CC;
+	clear: right;
+	color: white;
+	background-color: #2200CC;
 }
 
