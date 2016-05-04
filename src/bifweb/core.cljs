@@ -16,14 +16,19 @@
 
 (defn header-page-header []
   [:div.page-header
+  	[:img ]
    [:h1 "Buffalo Infringement"]
    [:p "11 days of art under the radar"]])
 
 (defn header-jumbotron []
   [:div.header
    [:div.jumbotron
-    [:h1 "Buffalo Infringement"]
-    [:p "11 days of art under the radar"]]])
+   	[:img.banner 
+   		{ :src "/img/bif_2016_logo_only.png"
+   			:width "960px" }]
+    ; [:h1 "Buffalo Infringement"]
+    ; [:p "11 days of art under the radar"]
+    ]])
 
 
 (defn footer []
@@ -59,10 +64,10 @@
          [:ul.nav.navbar-nav
           [nav-link "#/" "Home" :home collapsed?]
           [nav-link "#/about" "About" :about collapsed?]
-          ; [nav-link "#/login" "Login" :login collapsed?]
-          ; [nav-link "#/register" "Register" :register collapsed?]
-          ; [nav-link "#/forum" "Forum" :forum collapsed?]
-          ]]]])))
+          ; [nav-link "#/about/global" "Global" :global collapsed?]
+          ; [nav-link "#/about/local" "Local" :local collapsed?]
+          [nav-link "#/scheduler" "Scheduler" :scheduler collapsed?]
+          [nav-link "#/forum" "Forum" :forum collapsed?]]]]])))
 
 
 
@@ -77,7 +82,7 @@
 
 (defn page []
   [:div.container
-   [header-page-header]
+   [header-jumbotron]
    [(pages (session/get :page))]
    [footer]])
 

@@ -1,2 +1,21 @@
 /* some style */
 
+
+.featured {
+	display: inline-block;
+	width: 32%;
+	height: 300px;
+	margin: 5px;
+
+}
+
+#featured-left {
+	background-color: #22CC00;
+}
+#featured-center {
+	background-color: #33FFCC;
+}
+#featured-right {
+	background-color: #FF00CC;
+}
+
