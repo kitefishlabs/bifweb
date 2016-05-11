@@ -25,37 +25,54 @@
    [:div.jumbotron
    	[:img 
    		{ :class "banner"
-   			:src "/img/bif_2016_logo_only.png"
-   			:width "960px" }]
-   	[:div
-   		{:class "social-links"}
-   		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
-	   		[:img 
-  	 			{	:src "/img/Facebook.gif",
-   				 	:width "32px",
-  	 				:class "social-circle"
-  	 				:alt "fb" }]]
-   		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
-	   		[:img 
-  	 			{	:src "/img/Twitter.gif"
-   				 	:width "32px"
-   				 	:class "social-circle"
-   				 	:alt "tw" }]]
-   		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
-   			[:img 
-   				{	:src "/img/Soundcloud.png"
-   			 		:width "32px"
-   			 		:class "social-circle"
-   				 	:alt "sc" }]]]
-    ; [:h1 "Buffalo Infringement"]
-    ; [:p "11 days of art under the radar"]
-    ]])
+   			:src "/img/bif_2016_header_left.png"
+   			:width "160px" }]
+    [:img 
+      { :class "banner"
+        :src "/img/bif_2016_header_center.png"
+        :width "600px" }]
+   	
+      [:div
+   		  {:class "social-links"}
+     		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
+  	   		[:img 
+    	 			{	:src "/img/Facebook.gif",
+     				 	:width "32px",
+    	 				:class "social-circle"
+    	 				:alt "fb" }]]
+     		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
+  	   		[:img 
+    	 			{	:src "/img/Twitter.gif"
+     				 	:width "32px"
+     				 	:class "social-circle"
+     				 	:alt "tw" }]]
+     		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
+     			[:img 
+     				{	:src "/img/Soundcloud.png"
+     			 		:width "32px"
+     			 		:class "social-circle"
+     				 	:alt "sc" }]]]
+      [:div
+        {:class "announce"}
+        [:div
+          {:class "announce-line"}
+          [:a {:href "/db2/schedule.php"}
+            "schedule"]]
+        [:div
+          {:class "announce-line"}
+          [:a {:href "/contact"}
+            "contact"]]
+        [:div
+          {:class "announce-line"}
+          [:a {:href "/forum"}
+            "forum"]]]]])
 
 
 (defn footer []
   [:div.footer
-   [:p (str "Copyright © 2016.  ") ;(.getFullYear (js/Date.)) " ")
-    " - Powered by: " [:a {:href "http://github.com/kitefishlabs"} " Kitefish Labs"]]])
+   [:p (str "Copyright © " (.getFullYear (js/Date.)))
+    " - Powered by: " [:a {:href "http://github.com/kitefishlabs"} 
+    " Kitefish Labs"]]])
 
 (defn nav-link [uri title page collapsed?]
   [:li {:class (when (= page (session/get :page)) "active")}
@@ -79,7 +96,7 @@
           [:span.icon-bar]
           [:span.icon-bar]
           [:span.icon-bar]]
-         [:a.navbar-brand {:href "#/"} "bifweb"]]
+       [:a.navbar-brand {:href "#/"} "bifweb"]]
         [:div.navbar-collapse.collapse
          (when-not @collapsed? {:class "in"})
          [:ul.nav.navbar-nav
@@ -87,17 +104,15 @@
           [nav-link "#/about" "About" :about collapsed?]
           ; [nav-link "#/about/global" "Global" :global collapsed?]
           ; [nav-link "#/about/local" "Local" :local collapsed?]
-          [nav-link "#/scheduler" "Scheduler" :scheduler collapsed?]
-          [nav-link "#/forum" "Forum" :forum collapsed?]]]]])))
+          ; [nav-link "#/scheduler" "Scheduler" :scheduler collapsed?]
+          [nav-link "#/forum" "Forum" :forum collapsed?]
+          ]]]])))
 
 
 
 
 (def pages
   {:home #'home-page
-   ; :login #'login-page
-   ; :register #'register-page
-   ; :forum #'forum-page
    :about #'about-page
    :default #'home-page})
 
@@ -115,9 +130,9 @@
                     (.log js/console "base route")
                     (session/put! :page :home))
 
-(secretary/defroute "/about" []
-                    (.log js/console "about route")
-                    (session/put! :page :about))
+; (secretary/defroute "/about" []
+;                     (.log js/console "about route")
+;                     (session/put! :page :about))
 
 
 ; (defn main-page []
