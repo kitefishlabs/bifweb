@@ -2,9 +2,12 @@
   (:require [reagent.core :as reagent :refer [atom]]
   					[secretary.core :as secretary :refer-macros [defroute]]
   					[bifweb.session :as session]
+						[bifweb.common :refer [header-jumbotron footer navbar]]
   					[bifweb.pages.home :refer [home-page]]
-        	  [bifweb.pages.about :refer [about-page]]
-          	[bifweb.util :refer [hook-browser-navigation!]])
+        	  [bifweb.pages.faq :refer [faq-page]]
+						[bifweb.pages.history :refer [history-page]]
+						[bifweb.pages.contact :refer [contact-page]]
+						[bifweb.util :refer [hook-browser-navigation!]])
   (:import goog.History))
 
 (enable-console-print!)
@@ -14,106 +17,11 @@
 (defonce app-state (atom {:text "TEXT"}))
 
 
-(defn header-page-header []
-  [:div.page-header
-  	[:img ]
-   [:h1 "Buffalo Infringement"]
-   [:p "11 days of art under the radar"]])
-
-(defn header-jumbotron []
-  [:div.header
-   [:div.jumbotron
-   	[:img 
-   		{ :class "banner"
-   			:src "/img/bif_2016_header_left.png"
-   			:width "160px" }]
-    [:img 
-      { :class "banner"
-        :src "/img/bif_2016_header_center.png"
-        :width "600px" }]
-   	
-      [:div
-   		  {:class "social-links"}
-     		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
-  	   		[:img 
-    	 			{	:src "/img/Facebook.gif",
-     				 	:width "32px",
-    	 				:class "social-circle"
-    	 				:alt "fb" }]]
-     		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
-  	   		[:img 
-    	 			{	:src "/img/Twitter.gif"
-     				 	:width "32px"
-     				 	:class "social-circle"
-     				 	:alt "tw" }]]
-     		[:a {:href "http://www.facebook.com/InfringeEveryDay"}
-     			[:img 
-     				{	:src "/img/Soundcloud.png"
-     			 		:width "32px"
-     			 		:class "social-circle"
-     				 	:alt "sc" }]]]
-      [:div
-        {:class "announce"}
-        [:div
-          {:class "announce-line"}
-          [:a {:href "/db2/schedule.php"}
-            "schedule"]]
-        [:div
-          {:class "announce-line"}
-          [:a {:href "/contact"}
-            "contact"]]
-        [:div
-          {:class "announce-line"}
-          [:a {:href "/forum"}
-            "forum"]]]]])
-
-
-(defn footer []
-  [:div.footer
-   [:p (str "Copyright © " (.getFullYear (js/Date.)))
-    " - Powered by: " [:a {:href "http://github.com/kitefishlabs"} 
-    " Kitefish Labs"]]])
-
-(defn nav-link [uri title page collapsed?]
-  [:li {:class (when (= page (session/get :page)) "active")}
-   [:a {:href uri
-        :on-click #(reset! collapsed? true)}
-    title]])
-
-(defn navbar []
-  (let [collapsed? (atom true)]
-    (fn []
-      [:nav.navbar.navbar-inverse.navbar-fixed-top
-       [:div.container
-        [:div.navbar-header
-         [:button.navbar-toggle
-          {:class         (when-not @collapsed? "collapsed")
-           :data-toggle   "collapse"
-           :aria-expanded @collapsed?
-           :aria-controls "navbar"
-           :on-click      #(swap! collapsed? not)}
-          [:span.sr-only "Toggle Navigation"]
-          [:span.icon-bar]
-          [:span.icon-bar]
-          [:span.icon-bar]]
-       [:a.navbar-brand {:href "#/"} "bifweb"]]
-        [:div.navbar-collapse.collapse
-         (when-not @collapsed? {:class "in"})
-         [:ul.nav.navbar-nav
-          [nav-link "#/" "Home" :home collapsed?]
-          [nav-link "#/about" "About" :about collapsed?]
-          ; [nav-link "#/about/global" "Global" :global collapsed?]
-          ; [nav-link "#/about/local" "Local" :local collapsed?]
-          ; [nav-link "#/scheduler" "Scheduler" :scheduler collapsed?]
-          [nav-link "#/forum" "Forum" :forum collapsed?]
-          ]]]])))
-
-
-
-
 (def pages
   {:home #'home-page
-   :about #'about-page
+   :history #'history-page
+	 :faq #'faq-page
+	 :contact #'contact-page
    :default #'home-page})
 
 (defn page []
@@ -126,19 +34,15 @@
 ;; Routes
 ;(secretary/set-config! :prefix "#")
 
-(secretary/defroute "/" []
-                    (.log js/console "base route")
-                    (session/put! :page :home))
+(defroute "/" []
+					(session/put! :page :home))
+(defroute "/faq" []
+					(session/put! :page :faq))
+(defroute "/history" []
+					(session/put! :page :history))
+(defroute "/about" []
+					(session/put! :page :about))
 
-; (secretary/defroute "/about" []
-;                     (.log js/console "about route")
-;                     (session/put! :page :about))
-
-
-; (defn main-page []
-;   [:div
-;   	[:h1 (:title @app-state)]
-;   	[:p "test"]])
 
 
 ;; Initialize app

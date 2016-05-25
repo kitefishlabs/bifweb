@@ -1,7 +1,7 @@
-(ns bifweb.pages.about
+(ns bifweb.pages.history
   (:require [reagent.core :as reagent :refer [atom]]))
 
-(defn about-page []
+(defn history-page []
   (fn []
     [:div.col-sm-12
       [:h2 "What is Infringement?"]
