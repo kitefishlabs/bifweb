@@ -58,7 +58,9 @@
           [:span.icon-bar]
           [:span.icon-bar]
           [:span.icon-bar]]
-         [:a.navbar-brand {:href "#/"} "bifweb"]]
+         [:a.navbar-brand {:href "#/"}
+          ;[:img {:width "36px" :src "/img/bif_2016_header_left.png" :alt "bif-icon"}]
+          "BIF 2016"]]
         [:div.navbar-collapse.collapse
          (when-not @collapsed? {:class "in"})
          [:ul.nav.navbar-nav
@@ -71,20 +73,33 @@
           [social-links]]]]])))
 
 
-(defn header-page-header []
-  [:div.page-header
-   [:img ]
-   [:h1 "Buffalo Infringement"]
-   [:p "11 days of art under the radar"]])
+;(defn header-page-header []
+;  [:div.page-header
+;   [:img ]
+;   [:h1 "Buffalo Infringement"]
+;   [:p "11 days of art under the radar"]])
 
 (defn header-jumbotron []
-  [:div.header
-   [:div.jumbotron
-    [:img
-     { :class "banner"
-      :src "/img/bif_2016_header_left.png"
-      :width "160px" }]
-    [:img
-     { :class "banner"
-      :src "/img/bif_2016_header_center.png"
-      :width "600px" }]]])
+  (fn []
+    ;(let [w (if (> (.innerWidth js/window) 0) (.innerWidth js/window) (.width js/screen))]
+      [:div.header
+        ;(if
+        ;  (w < 641)
+
+          [:div.jumbotron
+           [:img
+             {:class "banner"
+              :src "/img/bif_2016_header_center.png"
+              :width "320px" }]]
+
+          ;[:div.jumbotron
+          ; [:img
+          ;  {:class "banner"
+          ;   :src "/img/bif_2016_header_left.png"
+          ;   :width "160px" }]
+          ; [:img
+          ;  {:class "banner"
+          ;   :src "/img/bif_2016_header_center.png"
+          ;   :width "600px" }]]
+    ;)
+]))

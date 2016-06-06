@@ -19,8 +19,8 @@
 
 (def pages
   {:home #'home-page
-   :history #'history-page
 	 :faq #'faq-page
+   :history #'history-page
 	 :contact #'contact-page
    :default #'home-page})
 
@@ -42,7 +42,8 @@
 					(session/put! :page :history))
 (defroute "/about" []
 					(session/put! :page :about))
-
+(defroute "/contact" []
+					(session/put! :page :contact))
 
 
 ;; Initialize app
@@ -61,5 +62,5 @@
   (session/reset! {:page :home})
   (mount-components)
 
-  (defn fig-reload []
-  	(swap! app-state update-in [:__figwheel_counter] inc))
+  ;(defn fig-reload []
+  ;	(swap! app-state update-in [:__figwheel_counter] inc))

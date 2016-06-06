@@ -8,6 +8,10 @@
 	clear: right;
 }
 
+.header {
+    padding : 0 25px 0 10px;
+}
+
 .jumbotron {
 	padding: 60px 0 10px 0;
 	margin: 5px -20px;
