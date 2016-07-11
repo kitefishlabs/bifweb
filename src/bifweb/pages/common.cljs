@@ -1,46 +1,45 @@
-(ns bifweb.common
+(ns bifweb.pages.common
   (:require [reagent.core :as reagent :refer [atom]]
             [secretary.core :as secretary :refer-macros [defroute]]
             [bifweb.session :as session])
   (:import goog.History))
 
+(defn social-links []
+  (fn []
+    [:div
+     {:class "social-links-bar"}
+     [:a {:href "http://www.facebook.com/InfringeEveryDay"}
+      [:i {:class "fa fa-facebook fa-2x fa-fw"}]]
+     [:a {:href "http://www.twitter.com/infringebuffalo"}
+      [:i {:class "fa fa-twitter fa-2x fa-fw"}]]
+     [:a {:href "https://www.flickr.com/groups/infringebuffalo/"}
+      [:i {:class "fa fa-flickr fa-2x fa-fw"}]]
+     [:a {:href "https://soundcloud.com/buffalo-infringement"}
+      [:i {:class "fa fa-soundcloud fa-2x fa-fw"}]]
+     [:a {:href "https://www.youtube.com/channel/UCS1cbOLCnemeraCwCSmW4kQ"}
+      [:i {:class "fa fa-youtube fa-2x fa-fw"}]]
+     [:a {:href "https://www.instagram.com/explore/tags/infringeeveryday/?hl=en"}
+      [:i {:class "fa fa-instagram fa-2x fa-fw"}]]
+     [:a {:href "https://vimeo.com/search?q=%23infringeeveryday"}
+      [:i {:class "fa fa-vimeo fa-2x fa-fw"}]]
+     [:a {:href "https://www.pinterest.com/search/?q=buffalo%20infringement"}
+      [:i {:class "fa fa-pinterest fa-2x fa-fw"}]]]))
 
 (defn footer []
   [:div.footer
    [:p (str "Copyright © " (.getFullYear (js/Date.)))
 
     " - Powered by: " [:a {:href "http://github.com/kitefishlabs"}
-                       " Kitefish Labs"]]])
-
-(defn social-links []
-  [:div
-   {:class "quick-links"}
-   [:div
-    {:class "social-links-bar"}
-    [:a {:href "http://www.facebook.com/InfringeEveryDay"}
-     [:img
-      {	:src "/img/Facebook.gif",
-       :width "32px",
-       :class "social-circle"
-       :alt "fb" }]]
-    [:a {:href "http://www.facebook.com/InfringeEveryDay"}
-     [:img
-      {	:src "/img/Twitter.gif"
-       :width "32px"
-       :class "social-circle"
-       :alt "tw" }]]
-    [:a {:href "http://www.facebook.com/InfringeEveryDay"}
-     [:img
-      {	:src "/img/Soundcloud.png"
-       :width "32px"
-       :class "social-circle"
-       :alt "sc" }]]]])
+                       "Kitefish Labs"]]
+   [social-links]])
 
 (defn nav-link [uri title page collapsed?]
   [:li {:class (when (= page (session/get :page)) "active")}
    [:a {:href uri
         :on-click #(reset! collapsed? true)}
     title]])
+
+
 
 (defn navbar []
   (let [collapsed? (atom true)]
@@ -59,47 +58,30 @@
           [:span.icon-bar]
           [:span.icon-bar]]
          [:a.navbar-brand {:href "#/"}
-          ;[:img {:width "36px" :src "/img/bif_2016_header_left.png" :alt "bif-icon"}]
-          "BIF 2016"]]
+          [:img 
+            { :id "sitelogo"
+              :src "/img/bif_2016_header_center.png" 
+              :alt "bif-icon"}]]]
         [:div.navbar-collapse.collapse
          (when-not @collapsed? {:class "in"})
          [:ul.nav.navbar-nav
           [nav-link "#/" "Home" :home collapsed?]
           [nav-link "#/faq" "FAQ" :faq collapsed?]
-          [nav-link "#/history" "History" :history collapsed?]
+          [nav-link "#/about" "About" :history collapsed?]
           [nav-link "#/contact" "Contact" :contact collapsed?]
           [nav-link "#/forum" "Forum" :forum collapsed?]
-          [nav-link "#/scheduler" "Scheduler Login" :scheduler collapsed?]
-          [social-links]]]]])))
-
-
-;(defn header-page-header []
-;  [:div.page-header
-;   [:img ]
-;   [:h1 "Buffalo Infringement"]
-;   [:p "11 days of art under the radar"]])
+          [nav-link "#/scheduler" "Schedulers" :scheduler collapsed?]]]]])))
 
 (defn header-jumbotron []
   (fn []
     ;(let [w (if (> (.innerWidth js/window) 0) (.innerWidth js/window) (.width js/screen))]
-      [:div.header
-        ;(if
-        ;  (w < 641)
-
-          [:div.jumbotron
+    [:div.header
+        [:div.jumbotron
            [:img
-             {:class "banner"
-              :src "/img/bif_2016_header_center.png"
-              :width "320px" }]]
-
-          ;[:div.jumbotron
-          ; [:img
-          ;  {:class "banner"
-          ;   :src "/img/bif_2016_header_left.png"
-          ;   :width "160px" }]
-          ; [:img
-          ;  {:class "banner"
-          ;   :src "/img/bif_2016_header_center.png"
-          ;   :width "600px" }]]
-    ;)
-]))
+            {:class "banner" 
+             :id "banner-left"
+             :src "/img/bif_2016_header_left.png"}]
+           [:img
+            {:class "banner" 
+             :id "banner-right"
+             :src "/img/bif_2016_header_center.png"}]]]))

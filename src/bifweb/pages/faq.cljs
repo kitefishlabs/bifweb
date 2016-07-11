@@ -7,23 +7,23 @@
   [{:topic "General Information"
     :questions
            [{:question "What is the Buffalo Infringement Festival?"
-             :answer   "The Buffalo iNFRINGEMENT Festival is a celebration of all art forms in as many locations as will give us permission  around the city of Buffalo. The artists are primarily local talent, but they also include regional and international artists. The festival covers a huge variety of art from traditional, family-orientated, and political, eclectic, controversial, and experimental."}
+             :answer   "The Buffalo Infringement Festival is a celebration of all art forms in as many locations as will give us permission  around the city of Buffalo. The artists are primarily local talent, but they also include regional and international artists. The festival covers a huge variety of art from traditional, family-orientated, and political, eclectic, controversial, and experimental."}
             {:question "How does it happen?"
              :answer   "Many volunteer hours are put in to secure venues, manage availability, and schedule artists. A group of volunteer organizers plan and schedule the eleven days of events, and do fundraising and awareness events throughout the year. We can always use more participants, though, and please consider volunteering!"}
             {:question "Who are the people behind the Buffalo Infringement Festival?"
-             :answer "A group of core volunteer organizers including art enthusiasts, educators, business owners, booking agents, and the artists themselves make iNFRINGEMENT possible."}
-            {:question "Where does iNFRINGEMENT happen?"
-             :answer "The Buffalo iNFRINGEMENT Festival began in Allentown, but has spread across the city, including to Grant St, Jefferson Ave, and Elmwood."}
-            {:question "When is iNFRINGEMENT?"
+             :answer "A group of core volunteer organizers including art enthusiasts, educators, business owners, booking agents, and the artists themselves make Infringement possible."}
+            {:question "Where does Infringement happen?"
+             :answer "The Buffalo Infringement Festival began in Allentown, but has spread across the city, including to Grant St, Jefferson Ave, and Elmwood."}
+            {:question "When is Infringement?"
              :answer "It starts on the last Thursday of July and runs eleven days through the first weekend of August. Specific dates change from year to year. The 2016 festival will be from July 28th to August 7th."}
-            {:question "What kind of events occur during iNFRINGEMENT?"
+            {:question "What kind of events occur during Infringement?"
              :answer "Every kind of artistic discipline is represented in this festival--including artists who defy categorization. Music of all varieties including acoustic, folk, progressive, rock, metal, punk, indie, noise, electronic, jazz, and world. Dance, including modern, movement, jazz, step, belly-dancing, swing, African, and many World dances. Theater, from serious to lighthearted. Poetry, spoken word, and other litera. Film: full-length features, short films, and multimedia. Visual art: painting, sculpture, drawing, metal work, wood working, pottery, crafting, DIY, conceptual art, installation, and public art. Street performers like mimes, balloon arts, and juggling. Audience participation events like workshops, demonstrations, and interactive theater"}
             ]}
 
     {:topic "Audience Members"
      :questions
             [{:question "Where is the schedule available?"
-              :answer "The schedule is available online and in The Public. The Public schedule comes out the day before iNFRINGEMENT. There are also schedules available at most of the venues. Check online at infringebuffalo.org to stay abreast of any changes!"}
+              :answer "The schedule is available online and in The Public. The Public schedule comes out the day before Infringement. There are also schedules available at most of the venues. Check online at infringebuffalo.org to stay abreast of any changes!"}
              {:question "When can we see the schedule?"
               :answer "Look for the schedule in The Public the week before the festival. The schedule will provide the dates, times, and places of all performances and give a description of each performance. In 2016 the schedule will appear in the Public on July 27."}
              {:question " What about last minute changes and cancellations?"
@@ -31,7 +31,7 @@
 
    {:topic "Artists"
     :questions
-           [{:question "What does iNFRINGEMENT provide for artists?"
+           [{:question "What does Infringement provide for artists?"
              :answer "We schedule your shows, provide some logistics, and generally promote the festival. Organizers are also take on the job of creating a paper schedule published in the Public and an online schedule."}
             {:question "When do I sign up?"
              :answer "BIF accepts proposals up until May 1. Actual dates may vary from year to year, so check for calls for work early."}
@@ -63,11 +63,11 @@
 
    {:topic "Venues"
     :questions
-           [{:question "What does iNFRINGEMENT provide for a venue?"
+           [{:question "What does Infringement provide for a venue?"
              :answer "BIF organizers schedule performances and art appropriate to your venue, based on responses to venue questionaires and communication with organizers."}
             {:question "When can I find out the schedule for my venue?"
              :answer "We finalize the schedule by July 1st, but most scheduling is done in early to mid June."}
-            {:question "How exactly do I find out which days iNFRINGEMENT is using the space?"
+            {:question "How exactly do I find out which days Infringement is using the space?"
              :answer "Log in to our scheduler, or give your organizer contact a call! You should know the final plan by early July. And one of the organizers should be calling you in the first place."}
             {:question "So which bands do you choose for my space?"
              :answer "Whichever are available on the nights your venue is, and are appropriate for your space and expressed interests."}
@@ -114,23 +114,20 @@
       [:div {:class "qa-pair"}
        [:p {:class "question"} q]
        (if (string? a)
-         [:p {:class "answer"} a]
-         a)])))
+         [:p {:class "answer"} a])])))
 
 (defn markup-topic [topic-section]
   (let [topic (:topic topic-section)
         quests (:questions topic-section)]
     (fn []
-      [:div {:class "topic"}
+      [:div {:class "faq-topic"}
        [:h2 topic]
-       ;[:p {:class "q"} quests]
        (for [quest quests]
          ^{:key {:id quest}} [markup-question quest])])))
 
 (defn faq-page []
   (fn []
     [:h1 "FAQs"]
-    [:ul
+    [:ul {:class "faq-topics-list"}
       (for [topic topicized-qna]
-        ;(.log js/console (:topic topic))
         ^{:key (:id topic)} [markup-topic topic])]))

@@ -1,0 +1,279 @@
+
+@color-blue-0: #5AADCD;	/* Main Primary color */
+@color-blue-1: #385763;
+@color-blue-2: #E7F5FB;
+@color-blue-3: #05749E;
+@color-blue-4: #0B5672;
+
+@color-red-0: #FD6970; /* Main Secondary color (1) */
+@color-red-1: #9B5458;
+@color-red-2: #FFEBEC;
+@color-red-3: #F7000C;
+@color-red-4: #B30A12;
+
+@color-green-0: #6CE760;	/* Main Secondary color (2) */
+@color-green-1: #4C8146;
+@color-green-2: #EBFDE9;
+@color-green-3: #14CE00;
+@color-green-4: #169508;
+
+@color-orange-0: #FFB76A;	/* Main Complement color */
+@color-orange-1: #9D7B56;
+@color-orange-2: #FFF5EB;
+@color-orange-3: #FB8300;
+@color-orange-4: #B6630A;
+
+@color-black: #000;
+@color-gray-0: #111;
+@color-gray-1: #444;
+@color-gray-2: #777;
+@color-gray-3: #aaa;
+@color-gray-4: #ddd;
+@color-white: #fff;
+
+/*font-family: 'Oswald', sans-serif;
+font-family: 'Roboto Slab', serif;*/
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  /*border: 1px green solid;*/
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Oswald', sans-serif;
+}
+
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+.row {
+	/*max-width: 800px;*/
+}
+
+.header {
+  padding : 0 5px 0 0px;
+}
+
+
+@media screen and (min-width: 648px) {
+  .navbar {
+    padding-top: 0px;
+    background-color: @color-gray-4;
+  	color: @color-white;
+    font-size: 1.4em;
+  	margin-top: 0;
+    text-align: center;
+  	font-weight: 700;
+
+    img#sitelogo {
+      padding: 0;
+      margin-top: -6px;
+      width: 132px;
+  	}
+    a {
+      padding-left: 0;
+      padding-right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 648px) {
+  .navbar {
+    padding-top: 0px;
+    background-color: @color-gray-4;
+    color: @color-white;
+    font-size: 1.4em;
+  	margin-top: 0;
+    text-align: center;
+  	font-weight: 700;
+
+    img#sitelogo {
+      padding: 0;
+      margin-top: -6px;
+      width: 132px;
+  	}
+    a {
+      padding-left: 30px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.footer {
+  background-color: @color-white;
+}
+
+
+@media screen and (min-width: 648px) {
+
+/* app */
+
+  .jumbotron {
+    display: block;
+    padding: 24px 0 0 0;
+    margin-top: 30px;
+    margin-left: 4px;
+    min-width: 648px;
+    background: @color-orange-2;
+    img#banner-left {
+      width: 64px;
+      margin:0;
+    }
+    img#banner-right {
+      width: 320px;
+    }
+  }
+}
+
+@media screen and (max-width: 648px) {
+
+/* app */
+
+  .jumbotron {
+    display: block;
+    padding: 24px 0 0 0;
+    margin: 32px 10px 0;
+    min-width: 420px;
+    background: @color-orange-2;
+
+    img {
+      width: 320px;
+      margin:0;
+    }
+  }
+}
+
+#banner-left {
+  width: 64px;
+}
+
+#banner-right {
+  width: 240px;
+}
+
+.social-links-bar {
+  float: right;
+  img {
+    width: 32px;
+    margin: 12px 8px 12px 4px;
+  }
+}
+
+@media screen and (min-width: 648px) {
+
+  .left-column {
+    width: 50%;
+    float: left;
+    clear: left;
+  }
+
+  .right-column {
+    width: 50%;
+    float: left;
+    clear: right;
+  }
+}
+
+@media screen and (max-width: 648px) {
+
+  .left-column {
+    /*display: block;*/
+    float: left;
+    clear: left;
+    width: 96%;
+    min-width: 400px;
+  }
+
+  .right-column {
+    /*display:block;*/
+    float: left;
+    clear: right;
+    width: 96%;
+    min-width: 400px;
+  }
+}
+
+
+.box {
+  display: inline-block;
+  min-height: 120px;
+  margin: 2.5px 0 2.5px;
+  padding: 16px 12px;
+  float: left;
+  clear: both;
+  width: 100%;
+  background-color: @color-red-2;
+
+  h2 {
+    padding-left: 0px;
+  }
+
+  .box-text > ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+#featured-left {
+  background-color: @color-blue-2;
+  clear: left;
+}
+
+#featured-right {
+  background-color: @color-green-2;
+  clear: left;
+}
+
+.faq-topic {
+  width: 96%;
+}
+
+.topic {
+  min-width: 300px;
+}
+
+.qa-pair {
+  background-color: @color-blue-2;
+}
+
+.question {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.answer {
+  padding-left:5px;
+}
+
+.who {
+  height: 3em;
+  //padding: 2px;
+  margin: 6px;
+}
+.who > ul {
+  padding: 0;
+  margin: 0;
+}
+
+.who > li {
+  background-color: @color-green-2;
+}
+
+.lt {
+  width: 47.5%;
+  float: left; clear: none;
+}
+
+.rt {
+  width: 47.5%;
+  float: left; clear: right;
+}
+	

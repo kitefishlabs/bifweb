@@ -15,11 +15,12 @@
                  [cljs-ajax "0.5.4"]]
   
   :plugins [[lein-figwheel "0.5.2"]
-            [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
+            [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]
+            [lein-less "1.7.5"]]
 
   :source-paths ["src"]
 
-  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
+  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" "resources/public/css"]
 
   :cljsbuild {:builds
               [{:id "dev"
@@ -72,4 +73,11 @@
 
              ;; to configure a different figwheel logfile path
              ;; :server-logfile "tmp/logs/figwheel-logfile.log"
-             })
+             }
+  :less {:source-paths ["resources/less"]
+         :target-path "resources/public/css"
+          :auto true}
+
+  :hooks [leiningen.less] )
+
+; http://paletton.com/palette.php?uid=73q2c0kiKKee-jK2zZwASvzuemP
