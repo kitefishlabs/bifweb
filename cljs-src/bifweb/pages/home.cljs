@@ -4,13 +4,39 @@
             [bifweb.session :as session]
             [bifweb.pages.common :refer [social-links]]))
 
+(defonce day 86400000)
+
+(defonce start-time (js/Date. 2016 6 28 20 0 0))
+
+;(defonce timer (r/atom (js/Date.)))
+(defn calc-days-til [datenow] 
+	(->>
+		(->
+			(- 
+				(.getTime start-time) 
+				(.getTime datenow))
+			(/ day)
+			(str))
+		(take 8)))
+
+(def days-til-bif-timer (r/atom (calc-days-til (js/Date.))))
+
+(defonce time-updater (js/setInterval	
+											#(reset! days-til-bif-timer (calc-days-til (js/Date.))) 5000))
+
+
+(defn clock []
+	(fn []
+		(let [time-str @days-til-bif-timer]
+				[:span time-str])))
+
 (defn home-page []
   (fn []
   	(set-title! "HOME")
 
 		[social-links]
 
- 		[:div.row
+ 		[:div.rowr
 	
 			[:div.left-column.col-md-6
 
@@ -18,9 +44,18 @@
 			  	{:class "box featured-1"}
 			  	
 			  	[:h2 "Find us on social media!"]
-          [:p "Promote your shows. Find things to do during the festival."]
+          [:p "Promote your shows. Find things to do during the festival. Make new friends."]
           [social-links]]
 	
+        [:div.row
+        	{:class "box featured-2"}
+        	
+        	[:h2 "Infringement Draws Near!"]
+        	[:p 
+        		"Just "
+        		[clock]
+        		" days until Opening Ceremonies."]]
+
 				[:div.row
 					{:class "box"}
           
