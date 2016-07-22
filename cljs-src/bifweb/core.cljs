@@ -4,9 +4,13 @@
   					[bifweb.session :as session]
 						[bifweb.pages.common :refer [header-jumbotron footer navbar]]
   					[bifweb.pages.home :refer [home-page]]
+            [bifweb.pages.schedule :refer [schedule-page]]
         	  [bifweb.pages.faq :refer [faq-page]]
 						[bifweb.pages.about :refer [about-page]]
 						[bifweb.pages.contact :refer [contact-page]]
+
+            [bifweb.pages.venues :refer [venues-page]]
+            
 						[bifweb.util :refer [hook-browser-navigation!]])
   (:import goog.History))
 
@@ -19,9 +23,11 @@
 
 (def pages
   {:home #'home-page
+   :schedule #'schedule-page
 	 :faq #'faq-page
    :about #'about-page
 	 :contact #'contact-page
+   :allvenues #'venues-page
    :default #'home-page})
 
 (defn page []
@@ -30,19 +36,25 @@
    [(pages (session/get :page))]])
 
 ;; -------------------------
-;; Routes
-;(secretary/set-config! :prefix "#")
+;; Routesa
+
+(secretary/set-config! :prefix "#")
 
 (defroute "/" []
 					(session/put! :page :home))
+(defroute "/schedule" []
+          (session/put! :page :schedule))
 (defroute "/faq" []
 					(session/put! :page :faq))
-;(defroute "/history" []
-;					(session/put! :page :history))
 (defroute "/about" []
 					(session/put! :page :about))
 (defroute "/contact" []
 					(session/put! :page :contact))
+
+(defroute "/venues" []
+          (session/put! :page :allvenues))
+;(defroute "/venue/:id" {:as params}
+;          (session/put! :page :venue))
 
 
 ;; Initialize app

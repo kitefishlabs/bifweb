@@ -12,37 +12,58 @@
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.5.1"]
                  [secretary "1.2.3"]
-                 [cljs-ajax "0.5.4"]]
+                 [cljs-ajax "0.5.4"]
+                 [prismatic/dommy "1.1.0"]]
   
   :plugins [[lein-figwheel "0.5.2"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]
             [lein-less "1.7.5"]]
 
-  :source-paths ["src"]
+  :source-paths ["cljs-src"]
 
-  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target" "resources/public/css"]
+  :profiles {:dev { :dependencies [[com.cemerick/piggieback "0.2.1"]
+                                   [figwheel-sidecar "0.5.2"]]
+                    :source-paths ["cljs-src"]}}
+
+  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+
+  :clean-targets ^{:protect false} ["resources/public/js" "resources/public/js/compiled" "target" "resources/public/css"]
 
   :cljsbuild {:builds
-              [{:id "dev"
-                :source-paths ["src"]
+              [
+                {
+                  :id "dev"
+                  :source-paths ["cljs-src"]
 
-                ;; If no code is to be run, set :figwheel true for continued automagical reloading
-                :figwheel {:on-jsload "bifweb.core/fig-reload"}
+                  ;; If no code is to be run, set :figwheel true for continued automagical reloading
+                  :figwheel {:on-jsload "bifweb.core/fig-reload"}
 
-                :compiler {:main bifweb.core
-                           :asset-path "js/compiled/out"
-                           :output-to "resources/public/js/compiled/bifweb.js"
-                           :output-dir "resources/public/js/compiled/out"
-                           :source-map-timestamp true}}
-               ;; This next build is an compressed minified build for
-               ;; production. You can build this with:
-               ;; lein cljsbuild once min
-               {:id "min"
-                :source-paths ["src"]
-                :compiler {:output-to "resources/public/js/compiled/bifweb.js"
+                  :compiler {:main bifweb.core
+                             :asset-path "js/compiled/out"
+                             :output-to "resources/public/js/compiled/bifweb.js"
+                             :output-dir "resources/public/js/compiled/out"
+                             :source-map-timestamp true}}
+                 ;; This next build is an compressed minified build for
+                 ;; production. You can build this with:
+                 ;; lein cljsbuild once min
+              
+                {
+                  :id "min"
+                  :source-paths ["cljs-src"]
+                  :figwheel false
+                  :compiler {:output-to "resources/public/js/compiled/bifweb.js"
                            :main bifweb.core
                            :optimizations :advanced
-                           :pretty-print false}}]}
+                           :pretty-print false}}
+              ; :prod
+              ;   {
+              ;     :source-paths ["cljs-src"]
+              ;     :compiler { :output-to "resources/public/js/bifweb.js"
+              ;                 :optimizations :advanced
+              ;                 :pretty-print false}
+              ;                 }
+              ;               }
+                          ]}
 
   :figwheel {;; :http-server-root "public" ;; default and assumes "resources"
              ;; :server-port 3449 ;; default
@@ -78,6 +99,8 @@
          :target-path "resources/public/css"
           :auto true}
 
-  :hooks [leiningen.less] )
+  :hooks [leiningen.less]
+)
 
 ; http://paletton.com/palette.php?uid=73q2c0kiKKee-jK2zZwASvzuemP
+

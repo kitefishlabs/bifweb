@@ -27,18 +27,17 @@
 
 (defn footer []
   [:div.footer
+   [social-links]
    [:p (str "Copyright © " (.getFullYear (js/Date.)))
 
     " - Powered by: " [:a {:href "http://github.com/kitefishlabs"}
-                       "Kitefish Labs"]]
-   [social-links]])
+                       "Kitefish Labs"]]])
 
 (defn nav-link [uri title page collapsed?]
   [:li {:class (when (= page (session/get :page)) "active")}
    [:a {:href uri
         :on-click #(reset! collapsed? true)}
     title]])
-
 
 
 (defn navbar []
@@ -66,11 +65,13 @@
          (when-not @collapsed? {:class "in"})
          [:ul.nav.navbar-nav
           [nav-link "#/" "Home" :home collapsed?]
+          [nav-link "schedule.php" "Schedule" :schedulephp collapsed?]
+          ;[nav-link "#/schedule" "Experimental" :schedule collapsed?]
           [nav-link "#/faq" "FAQ" :faq collapsed?]
           [nav-link "#/about" "About" :history collapsed?]
           [nav-link "#/contact" "Contact" :contact collapsed?]
-          [nav-link "#/forum" "Forum" :forum collapsed?]
-          [nav-link "#/scheduler" "Schedulers" :scheduler collapsed?]]]]])))
+          ;[nav-link "#/forum" "Forum" :forum collapsed?]
+          [nav-link "db2/" "Database" :database collapsed?]]]]])))
 
 (defn header-jumbotron []
   (fn []
