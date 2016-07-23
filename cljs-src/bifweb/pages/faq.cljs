@@ -89,9 +89,7 @@
    {:topic "Volunteering, Organizing and Contributing the Festival"
     :questions
            [{:question "Do you accept donations?"
-             :answer [:p "Yes. We are currently raising funds for the Public schedule and other costs through our "
-                      [:a {:href "https://www.indiegogo.com/projects/2016-buffalo-infringement-festival"} "IndieGogo campaign"] ". "
-                      "We aim to raise $2000 by July 2, 2016."]}
+             :answer [:p "Yes. You may make a donation via Paypal. All money goes to local vendors to pay for printing the schedule and securing paid technical and security assistance with some of our larger venues."]}
             {:question "Do you need volunteers?"
              :answer "Yes. All organizers are volunteers. One way to get more involved with the organization of the festival is through volunteering. We have all kinds of tasks that need your help."}
             {:question "How do I volunteer?"
