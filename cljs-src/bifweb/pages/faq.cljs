@@ -17,17 +17,17 @@
             {:question "When is Infringement?"
              :answer "It starts on the last Thursday of July and runs eleven days through the first weekend of August. Specific dates change from year to year. The 2016 festival will be from July 28th to August 7th."}
             {:question "What kind of events occur during Infringement?"
-             :answer "Every kind of artistic discipline is represented in this festival--including artists who defy categorization. Music of all varieties including acoustic, folk, progressive, rock, metal, punk, indie, noise, electronic, jazz, and world. Dance, including modern, movement, jazz, step, belly-dancing, swing, African, and many World dances. Theater, from serious to lighthearted. Poetry, spoken word, and other litera. Film: full-length features, short films, and multimedia. Visual art: painting, sculpture, drawing, metal work, wood working, pottery, crafting, DIY, conceptual art, installation, and public art. Street performers like mimes, balloon arts, and juggling. Audience participation events like workshops, demonstrations, and interactive theater"}
-            ]}
+             :answer "Every kind of artistic discipline is represented in this festival--including artists who defy categorization. Music of all varieties including acoustic, folk, progressive, rock, metal, punk, indie, noise, electronic, jazz, and world. Dance, including modern, movement, jazz, step, belly-dancing, swing, African, and many World dances. Theater, from serious to lighthearted. Poetry, spoken word, and other litera. Film: full-length features, short films, and multimedia. Visual art: painting, sculpture, drawing, metal work, wood working, pottery, crafting, DIY, conceptual art, installation, and public art. Street performers like mimes, balloon arts, and juggling. Audience participation events like workshops, demonstrations, and interactive theater"}]}
 
-    {:topic "Audience Members"
-     :questions
-            [{:question "Where is the schedule available?"
-              :answer "The schedule is available online and in The Public. The Public schedule comes out the day before Infringement. There are also schedules available at most of the venues. Check online at infringebuffalo.org to stay abreast of any changes!"}
-             {:question "When can we see the schedule?"
-              :answer "Look for the schedule in The Public the week before the festival. The schedule will provide the dates, times, and places of all performances and give a description of each performance. In 2016 the schedule will appear in the Public on July 27."}
-             {:question " What about last minute changes and cancellations?"
-              :answer "The printed schedule is designed several weeks before the actual events, so there are likely to be changes. The online schedule is the most up-to-date source for changes, cancellations, added performances, and contains detailed descriptions of installations and performances."}]}
+
+   {:topic "Audience Members"
+    :questions
+           [{:question "Where is the schedule available?"
+             :answer "The schedule is available online and in The Public. The Public schedule comes out the day before Infringement. There are also schedules available at most of the venues. Check online at infringebuffalo.org to stay abreast of any changes!"}
+            {:question "When can we see the schedule?"
+             :answer "Look for the schedule in The Public the week before the festival. The schedule will provide the dates, times, and places of all performances and give a description of each performance. In 2016 the schedule will appear in the Public on July 27."}
+            {:question " What about last minute changes and cancellations?"
+             :answer "The printed schedule is designed several weeks before the actual events, so there are likely to be changes. The online schedule is the most up-to-date source for changes, cancellations, added performances, and contains detailed descriptions of installations and performances."}]}
 
    {:topic "Artists"
     :questions
@@ -58,8 +58,8 @@
             {:question "When do visual artists hang and/or setup their works?"
              :answer "Visual artists receive a email with hang and tear down dates, as well as other details. Artist agreements are requested by some galleries."}
             {:question "Can you help bands/artists transport their gear?"
-             :answer "We can help, but it's ultimately the performers' responsibility to get themselves and their gear to their shows themselves."}
-            ]}
+             :answer "We can help, but it's ultimately the performers' responsibility to get themselves and their gear to their shows themselves."}]}
+
 
    {:topic "Venues"
     :questions
