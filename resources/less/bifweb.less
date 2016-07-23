@@ -58,6 +58,16 @@ li {
 	list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: @color-red-4;
+}
+
+
 .row {
 	/*max-width: 800px;*/
 }
@@ -66,18 +76,22 @@ li {
   padding : 0 5px 0 0px;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover {
+  background-color: @color-red-2; }
+
+
+
 
 @media screen and (min-width: 648px) {
   .navbar {
 
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 24px;
 
     padding-top: 0px;
-    background-color: @color-gray-1;
-  	color: @color-green-4;
-    margin-top: 0;
+    background-color: @color-white;
+  	margin-top: 0;
     text-align: center;
 
     img#sitelogo {
@@ -91,6 +105,7 @@ li {
     }
   }
 }
+
 
 @media screen and (max-width: 648px) {
   .navbar {
@@ -230,14 +245,16 @@ li {
   display: inline-block;
   min-height: 120px;
   margin: 2.5px 0 2.5px;
-  padding: 16px 12px;
+  padding: 18px 24px;
   float: left;
   clear: both;
   width: 100%;
   background-color: @color-gray-4;
 
   h2 {
+    margin: 0;
     padding-left: 0px;
+    padding: 2px 0 10px;
   }
 
   .box-text > ul {

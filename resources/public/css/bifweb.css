@@ -28,20 +28,29 @@ body {
 li {
   list-style: none;
 }
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #b30a12;
+}
 .row {
   /*max-width: 800px;*/
 }
 .header {
   padding: 0 5px 0 0px;
 }
+.navbar-inverse .navbar-nav > li > a:hover {
+  background-color: #ffebec;
+}
 @media screen and (min-width: 648px) {
   .navbar {
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 24px;
     padding-top: 0px;
-    background-color: #444444;
-    color: #169508;
+    background-color: #ffffff;
     margin-top: 0;
     text-align: center;
   }
@@ -161,14 +170,16 @@ li {
   display: inline-block;
   min-height: 120px;
   margin: 2.5px 0 2.5px;
-  padding: 16px 12px;
+  padding: 18px 24px;
   float: left;
   clear: both;
   width: 100%;
   background-color: #eeeeee;
 }
 .box h2 {
+  margin: 0;
   padding-left: 0px;
+  padding: 2px 0 10px;
 }
 .box .box-text > ul {
   margin: 0;

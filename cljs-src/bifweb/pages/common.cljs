@@ -67,7 +67,7 @@
           [nav-link "schedule.php" "Schedule" :schedulephp collapsed?]
           ;[nav-link "#/schedule" "Experimental" :schedule collapsed?]
           [nav-link "#/faq" "FAQ" :faq collapsed?]
-          [nav-link "#/about" "About" :history collapsed?]
+          [nav-link "#/about" "About" :about collapsed?]
           [nav-link "#/contact" "Contact" :contact collapsed?]
           ;[nav-link "#/forum" "Forum" :forum collapsed?]
           [nav-link "db2/" "Database" :database collapsed?]]]]])))

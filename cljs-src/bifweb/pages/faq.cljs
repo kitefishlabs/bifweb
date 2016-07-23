@@ -120,14 +120,17 @@
   (let [topic (:topic topic-section)
         quests (:questions topic-section)]
     (fn []
-      [:div {:class "faq-topic"}
+      [:div.col-md-12 {:class "faq-topic"}
        [:h2 topic]
        (for [quest quests]
          ^{:key {:id quest}} [markup-question quest])])))
 
 (defn faq-page []
   (fn []
-    [:h1 "FAQs"]
+    (set-title! "Buffalo Infringement Festival - FAQs")
+    [:div.col-md-12
+      [:div.row
+        [:h1 "FAQs"]]]
     [:ul {:class "faq-topics-list"}
       (for [topic topicized-qna]
         ^{:key (:id topic)} [markup-topic topic])]))

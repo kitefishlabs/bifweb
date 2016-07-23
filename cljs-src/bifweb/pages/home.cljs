@@ -75,7 +75,7 @@
          {:class "box"}
 
          [:h2 "Venues"]
-         [:p "In 2016, we have close to 100 venues. New venues this year include Amity Club..."]]
+         [:p "In 2016, we have close to 100 venues. New venues this year include Amity Club, Merriweather Library, Cafeology, Daily Planet "]]
 
        [:div.row
          {:class "box"}

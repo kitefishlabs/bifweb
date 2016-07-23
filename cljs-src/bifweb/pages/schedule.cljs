@@ -4,7 +4,7 @@
             [bifweb.session :as session]))
 
 (defn schedule-page []
-  [:div.col-md-12
+  (fn [] [:div.col-md-12]
     [:div.row
       [:h2 "2016 Festival Schedule"]
       [:p "..."]]
@@ -46,4 +46,4 @@
       [:p [:a {:href "#/genres/all"} "Categories"]]
       [:p [:a {:href "#/venues"} "Venues"]]]
     [:div.row
-      [:p "EMBEDDED MAP"]]])
+      [:p "EMBEDDED MAP"]]))
