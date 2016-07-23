@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :min-lein-version "2.6.1"
-  
+
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.7.228"]
                  [org.clojure/core.async "0.2.374"
@@ -14,7 +14,7 @@
                  [secretary "1.2.3"]
                  [cljs-ajax "0.5.4"]
                  [prismatic/dommy "1.1.0"]]
-  
+
   :plugins [[lein-figwheel "0.5.2"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]
             [lein-less "1.7.5"]]
@@ -42,19 +42,20 @@
                              :asset-path "js/compiled/out"
                              :output-to "resources/public/js/compiled/bifweb.js"
                              :output-dir "resources/public/js/compiled/out"
+                             :optimizations :none
                              :source-map-timestamp true}}
                  ;; This next build is an compressed minified build for
                  ;; production. You can build this with:
-                 ;; lein cljsbuild once min
-              
+                 ;; lein cljsbuild once release
+
                 {
-                  :id "min"
+                  :id "release"
                   :source-paths ["cljs-src"]
-                  :figwheel false
                   :compiler {:output-to "resources/public/js/compiled/bifweb.js"
-                           :main bifweb.core
-                           :optimizations :advanced
-                           :pretty-print false}}
+                             :output-dir "resources/public/prod-out"
+                             :main bifweb.core
+                             :optimizations :advanced
+                             :pretty-print false}}]}
               ; :prod
               ;   {
               ;     :source-paths ["cljs-src"]
@@ -63,13 +64,13 @@
               ;                 :pretty-print false}
               ;                 }
               ;               }
-                          ]}
+
 
   :figwheel {;; :http-server-root "public" ;; default and assumes "resources"
              ;; :server-port 3449 ;; default
              ;; :server-ip "127.0.0.1"
 
-             :css-dirs ["resources/public/css"] ;; watch and update CSS
+             :css-dirs ["resources/public/css"]} ;; watch and update CSS
 
              ;; Start an nREPL server into the running figwheel process
              ;; :nrepl-port 7888
@@ -94,13 +95,12 @@
 
              ;; to configure a different figwheel logfile path
              ;; :server-logfile "tmp/logs/figwheel-logfile.log"
-             }
+
   :less {:source-paths ["resources/less"]
          :target-path "resources/public/css"
           :auto true}
 
-  :hooks [leiningen.less]
-)
+  :hooks [leiningen.less])
+
 
 ; http://paletton.com/palette.php?uid=73q2c0kiKKee-jK2zZwASvzuemP
-

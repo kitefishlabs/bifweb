@@ -14,3 +14,4 @@ pom.xml
 
 .directory
 .idea*
+*.xul
