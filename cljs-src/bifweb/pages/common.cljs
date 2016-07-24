@@ -26,7 +26,6 @@
 
 (defn footer []
   [:div.footer
-   [social-links]
    [:p (str "Copyright © " (.getFullYear (js/Date.)))
 
     " - Powered by: " [:a {:href "http://github.com/kitefishlabs"}
@@ -74,14 +73,16 @@
 
 (defn header-jumbotron []
   (fn []
-    ;(let [w (if (> (.innerWidth js/window) 0) (.innerWidth js/window) (.width js/screen))]
     [:div.header
-        [:div.jumbotron
-           [:img
-            {:class "banner"
-             :id "banner-left"
-             :src "/img/bif_2016_header_left.png"}]
-           [:img
-            {:class "banner"
-             :id "banner-right"
-             :src "/img/bif_2016_header_center.png"}]]]))
+      [:div.jumbotron
+        [:div.col-md-12
+          [:div.row
+            [:img
+              { :class "banner"
+                :id "banner-left"
+                :src "/img/bif_2016_header_left.png"}]
+            [:img
+              { :class "banner"
+                :id "banner-right"
+                :src "/img/bif_2016_header_center.png"}]
+            [social-links]]]]]))

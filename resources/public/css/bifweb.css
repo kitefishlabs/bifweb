@@ -92,48 +92,61 @@ a:hover {
   /* app */
   .jumbotron {
     display: block;
-    padding: 24px 0 0 0;
-    margin-top: 30px;
-    margin-left: 4px;
-    min-width: 648px;
+    padding: 60px 0 0 0;
+    min-width: 720px;
     background: #ffffff;
   }
   .jumbotron img#banner-left {
     width: 64px;
     margin: 0;
+    float: left;
+    clear: none;
   }
   .jumbotron img#banner-right {
     width: 320px;
+    float: left;
+    clear: none;
+  }
+  .jumbotron .social-links-bar {
+    width: 200px;
+    float: left;
+    clear: none;
   }
 }
 @media screen and (max-width: 648px) {
-  /* app */
   .jumbotron {
     display: block;
     padding: 24px 0 0 0;
-    margin: 32px 10px 0;
-    min-width: 420px;
+    margin: 32px 10px 0 0;
+    width: 600px;
     background: #ffffff;
   }
-  .jumbotron img {
-    width: 320px;
+  .jumbotron .social-links-bar {
+    margin: -40px 0 0 132px;
+  }
+  img#banner-left {
+    width: 25%;
     margin: 0;
+    float: left;
+    clear: none;
+  }
+  img#banner-right {
+    width: 65%;
+    float: left;
+    clear: none;
+  }
+  .social-links-bar {
+    width: 200px;
+    float: left;
+    clear: both;
   }
 }
-#banner-left {
-  width: 64px;
-}
-#banner-right {
-  width: 240px;
-}
-.social-links-bar {
-  float: left;
-}
-.social-links-bar .social-link {
+.social-link {
   display: block;
   width: 12%;
   float: left;
   clear: none;
+  padding: 0;
 }
 @media screen and (min-width: 648px) {
   .col-md-6 {

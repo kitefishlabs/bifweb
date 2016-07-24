@@ -143,56 +143,66 @@ a:hover {
 
   .jumbotron {
     display: block;
-    padding: 24px 0 0 0;
-    margin-top: 30px;
-    margin-left: 4px;
-    min-width: 648px;
+    padding: 60px 0 0 0;
+    // margin-top: 30px;
+    // margin-left: 4px;
+    min-width: 720px;
     background: @color-white;
+
     img#banner-left {
       width: 64px;
       margin:0;
+      float: left;
+      clear: none;
     }
     img#banner-right {
       width: 320px;
+      float: left;
+      clear: none;
+    }
+    .social-links-bar {
+      width: 200px;
+      float: left;
+      clear: none;
     }
   }
 }
 
-@media screen and (max-width: 648px) {
 
-/* app */
+@media screen and (max-width: 648px) {
 
   .jumbotron {
     display: block;
     padding: 24px 0 0 0;
-    margin: 32px 10px 0;
-    min-width: 420px;
+    margin: 32px 10px 0 0;
+    width: 600px;
     background: @color-white;
 
-    img {
-      width: 320px;
-      margin:0;
+    .social-links-bar {
+      // padding-left: 35%;
+      margin: -40px 0 0 132px;
     }
+}
+
+  img#banner-left {
+    width: 25%;
+    margin:0;
+    float: left;
+    clear: none;
   }
-}
 
-#banner-left {
-  width: 64px;
-}
+  img#banner-right {
+    width: 65%;
+    float: left;
+    clear: none;
+  }
 
-#banner-right {
-  width: 240px;
-}
+  .social-links-bar {
+    width: 200px;
+    float: left;
+    clear: both;
+  }
 
-.social-links-bar {
-  float: left;
-
-.social-link {
-  display: block;
-  width: 12%;
-  float: left;
-  clear: none;
-}
 //  img {
 //    width: 32px;
 //    margin: 12px 8px 12px 4px;
@@ -200,6 +210,14 @@ a:hover {
 //  a {
 //    color: $color-black;
 // }
+}
+
+.social-link {
+  display: block;
+  width: 12%;
+  float: left;
+  clear: none;
+  padding: 0;
 }
 
 @media screen and (min-width: 648px) {
@@ -219,7 +237,11 @@ a:hover {
     float: left;
     clear: right;
   }
+
 }
+
+// 768
+// 992
 
 @media screen and (max-width: 648px) {
 

@@ -26,14 +26,12 @@
             [:li {:class "who" } [:a {:href "mailto:danceundertheradar@Gmail.com?Subject=Infringement%202016"} "Leslie Fineberg - Dance Czar"]]
             [:li {:class "who" } [:a {:href "mailto:pr@infringement.org?Subject=Infringement%202016"} "Heather Gring - Meeting chair, PR, Theater Contact*"]]
             [:li {:class "who" } [:a {:href "mailto:undividedwholness@gmail.com?Subject=Infringement%202016"} "George Hampton - Housing"]]
-            [:li {:class "who" } [:a {:href "mailto:undividedwholness@gmail.com?Subject=Infringement%202016"} "Jessica Knoerl - Theater Czar*"]]
-
+            [:li {:class "who" } [:a {:href "mailto:jessicaknoerl@gmail.com?Subject=Infringement%202016"} "Jessica Knoerl - Theater Czar*"]]
             [:li {:class "who" } [:a {:href "https://www.facebook.com/james.moffitt.73?fref=ts"} "James Moffit - Graphic Design, Posters, Art"]]
             [:li {:class "who" } [:a {:href "mailto:depape@buffalo.edu?Subject=Infringement%202016"} "Dave Pape - Treasurer / Web Design"]]
             [:li {:class "who" } [:a {:href "mailto:b00bflo@gmail.com?Subject=Infringement%202016"} "Marek Parker - Poetry & Literature Czar"]]
             [:li {:class "who" } [:a {:href "mailto:merlinsbooking@Gmail.com?Subject=Infringement%202016"} "Curt Rodderdam - Music Czar"]]
             [:li {:class "who" } [:a {:href "mailto:whsmythe@gmail.com?Subject=Infringement%202016"} "Bill Smythe - Venue Czar"]]
-            [:li {:class "who" } [:a {:href ""} "Amanda Sterzick - Poster Design (contest winner, 2016)"]]
             [:li {:class "who" } [:a {:href "mailto:buffaloinfringementfilms@gmail.com?Subject=Infringement%202016"} "Tom Stoll - Film Czar, Fundraising & Web"]]]]
          [:p "* Heather is the emergency/last minute contact for theater performers until Aug. 2, 2016."]
          [:p "Plus, of course, the hundreds of performers, and thousands of audience, family, and community that support the arts in Buffalo!"]]]]))
