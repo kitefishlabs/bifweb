@@ -86,3 +86,5 @@
                 :id "banner-right"
                 :src "/img/bif_2016_header_center.png"}]
             [social-links]]]]]))
+
+(def schedule-href "schedule.php")

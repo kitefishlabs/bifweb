@@ -12,8 +12,10 @@
         [:p "The following email addresses are the general contact points for the festival:"]
         [:div {:class "who"}
          [:ul
-          [:li {:class "who" } [:a {:href "mailto:info@infringebuffalo.org?Subject=Infringement%202016"} "info@infringebuffalo.org - An organizer will respond."]]
-          [:li {:class "who" } [:a {:href "mailto:pr@infringebuffalo.org?Subject=Infringement%202016"} "pr@infringebuffalo.org - Send us PR materials."]]]]]
+          [:li {:class "who"}
+            [:a {:href "mailto:info@infringebuffalo.org?Subject=Infringement%202016"} "info@infringebuffalo.org - An organizer will respond."]]
+          [:li {:class "who"}
+            [:a {:href "mailto:pr@infringebuffalo.org?Subject=Infringement%202016"} "pr@infringebuffalo.org - Send us PR materials."]]]]]
 
       [:div.row
         [:h2 "Who is Infringement?"]
@@ -27,7 +29,6 @@
             [:li {:class "who" } [:a {:href "mailto:pr@infringement.org?Subject=Infringement%202016"} "Heather Gring - Meeting chair, PR, Theater Contact*"]]
             [:li {:class "who" } [:a {:href "mailto:undividedwholness@gmail.com?Subject=Infringement%202016"} "George Hampton - Housing"]]
             [:li {:class "who" } [:a {:href "mailto:jessicaknoerl@gmail.com?Subject=Infringement%202016"} "Jessica Knoerl - Theater Czar*"]]
-            [:li {:class "who" } [:a {:href "https://www.facebook.com/james.moffitt.73?fref=ts"} "James Moffit - Graphic Design, Posters, Art"]]
             [:li {:class "who" } [:a {:href "mailto:depape@buffalo.edu?Subject=Infringement%202016"} "Dave Pape - Treasurer / Web Design"]]
             [:li {:class "who" } [:a {:href "mailto:b00bflo@gmail.com?Subject=Infringement%202016"} "Marek Parker - Poetry & Literature Czar"]]
             [:li {:class "who" } [:a {:href "mailto:merlinsbooking@Gmail.com?Subject=Infringement%202016"} "Curt Rodderdam - Music Czar"]]

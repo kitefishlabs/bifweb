@@ -1,6 +1,6 @@
 (ns bifweb.pages.about
   (:require [reagent.core :as reagent :refer [atom]]
-            [bifweb.pages.common :refer [social-links]]))
+            [bifweb.pages.common :as common]))
 
 (defn about-page []
   (fn []
@@ -18,8 +18,28 @@
           [:a {:href "http://www.infringementfestival.com/history/" :target "_blank"} "the history"]
           " of Infringement from the original festival."]]
 
-      [:div.row {:id "organizers"}
-        [:h2 "Organizers"]]
+      [:div.row
+        {:id "who"}
+        [:h2 "Organizers"]
+        [:ul {:class "who"}
+          [:li "Cat Herder, PR & Never Wrong: " [:span {:class "who"} "Heather Gring"]]
+          [:li "MUSIC & Always Right: " [:span {:class "who"} "Curt Rotterdam"]]
+          [:li "Music & Credibility Representative: " [:span {:class "who"} "Marty Boratin"]]
+          [:li "Electronic & Other Music: " [:span {:class "who"} "Steven Bader & Matt “Matka” Karnes"]]
+          [:li "Dance & Social-Media-Mass-Tagger: " [:span {:class "who"} "Leslie Fineberg"]]
+          [:li "Literary & Motherly Love: " [:span {:class "who"} "Marek Parker"]]
+          [:li "Theater & Umlaut Denier: " [:span {:class "who"} "Jessica Knoerl"]]
+          [:li "Theater & Summarization Savant: " [:span {:class "who"} "Laura Lonsky"]]
+          [:li "Film, Fundraising, Web, Tech: " [:span {:class "who"} "Tom Stoll"]]
+          [:li "Visual Arts & Kung Fu Feng Shui: " [:span {:class "who"} "Amy Duengfelder & Cat McCarthy"]]
+          [:li "Database, Treasurer, Omniscient Narration: " [:span " Dave Pape"]]
+          [:li "Street Coordinator & Tidy Systems Breaker: " [:span {:class "who"} "David Adamczyk"]]
+          [:li "Venues & City Paperwork Wizard: " [:span {:class "who"} "Bill Smythe"]]
+          [:li "BIF 2016 Logo Design: " [:span {:class "who"} "Amanda Sterzyck"]]
+          [:li "Schedule Design: " [:span {:class "who"} "Yames"]]
+          [:li "Last Minute Schedule Savers: " [:span {:class "who"} "Andrew Delmonte, Janna Willoughby-Lohr"]]
+          [:li "Also: Pam Swarts, Sarah Burhans, Dashuri Egriu, John Shotwell, Aaron Armstrong, Patrick Sears"]
+          [:li "ALL THOSE WE HAVE (NOT) FORGOTTEN"]]]
 
 
       [:div.row {:id "mandate"}
@@ -55,7 +75,7 @@
       [:div.row
         [:h2 "Press and Promotion"]
         [:p "We are active on multiple social media outlets..."]
-        [social-links]]
+        [common/social-links]]
 
       [:div.row
         [:h2 "Sponsors"]
@@ -77,7 +97,7 @@
         [:p "This festival is run completely on unicorn wishes and happy sunshine rays! Just kidding! There are real
           dollars that have to go into this grassroots festival for things like equipment, technicians, and most importaintly the printed
           schedule."]
-        [:p "Here is a (partial) list of our Indie GoGo donors who helped make Infringement possible in 2016:"]
+        [:p "Here is a (partial) list of our IndieGoGo donors who helped make Infringement possible in 2016:"]
         [:p "Matt szlachetka, patrickmuldowney, Andrea Turnbull, Susan J. Blackley, Chuck Tingley, Alejandro Gutierrez,
           John Schmitt, Jessica Knoerl, Lonny Lewis, Mermaid & Weasel, Nancy Fernandez, Barbara Miller, Salvatore Sciandra,
           sbader3, russianhands1, m.a.holsinger, Nicole Dionne, Julian Burgio, Michele Costa, ssgring, Alex Mead, Donald Kreger,

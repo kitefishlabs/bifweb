@@ -2,7 +2,7 @@
    (:require [reagent.core :as r]
              [bifweb.util :refer [set-title!]]
              [bifweb.session :as session]
-             [bifweb.pages.common :refer [social-links]]))
+             [bifweb.pages.common :as common]))
 
 (defonce day 86400000)
 
@@ -34,7 +34,7 @@
   (fn []
     (set-title! "HOME")
 
-    [social-links]
+    [common/social-links]
 
     [:div.rowr
 
@@ -45,7 +45,7 @@
 
          [:h2 "Find us on social media!"]
          [:p "Promote your shows. Find things to do during the festival. Make new friends."]
-         [social-links]]
+         [common/social-links]]
 
        [:div.row
          {:class "box featured-2"}
@@ -89,7 +89,7 @@
          {:class "box featured-2"}
 
          [:h2 "Infringement Schedule"]
-         [:p [:a {:href "schedule.php"} "The schedule is now live."] " The schedule will appear as an insert in the Public on July 26."]]
+         [:p [:a {:href common/schedule-href} "The schedule is now live."] " The schedule will appear as an insert in the Public on July 26."]]
 
        [:div.row
          {:class "box"}

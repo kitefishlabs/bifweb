@@ -1,7 +1,8 @@
 (ns bifweb.pages.faq
   (:require [reagent.core :as r]
             [bifweb.util :refer [set-title!]]
-            [bifweb.session :as session]))
+            [bifweb.session :as session]
+            [bifweb.pages.common :as common]))
 
 (def topicized-qna
   [{:topic "General Information"
@@ -25,9 +26,12 @@
            [{:question "Where is the schedule available?"
              :answer "The schedule is available online and in The Public. The Public schedule comes out the day before Infringement. There are also schedules available at most of the venues. Check online at infringebuffalo.org to stay abreast of any changes!"}
             {:question "When can we see the schedule?"
-             :answer "Look for the schedule in The Public the week before the festival. The schedule will provide the dates, times, and places of all performances and give a description of each performance. In 2016 the schedule will appear in the Public on July 27."}
+             :answer "Look for the schedule in The Public the week of the festival. In 2016 the schedule will appear in the Public on July 27."}
             {:question " What about last minute changes and cancellations?"
              :answer "The printed schedule is designed several weeks before the actual events, so there are likely to be changes. The online schedule is the most up-to-date source for changes, cancellations, added performances, and contains detailed descriptions of installations and performances."}]}
+                ; [:a {:href common/schedule-href}] 
+
+
 
    {:topic "Artists"
     :questions
