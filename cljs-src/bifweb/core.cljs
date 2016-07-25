@@ -36,11 +36,12 @@
    [(pages (session/get :page))]])
 
 ;; -------------------------
-;; Routesa
+;; Routes
 
-(secretary/set-config! :prefix "#")
+; (secretary/set-config! :prefix "#")
 
 (defroute "/" []
+          (.log js/console "ASDASD")
           (session/put! :page :home))
 (defroute "/schedule" []
           (session/put! :page :schedule))

@@ -1,9 +1,11 @@
 (ns bifweb.pages.about
   (:require [reagent.core :as reagent :refer [atom]]
-            [bifweb.pages.common :as common]))
+            [bifweb.pages.common :as common]
+            [bifweb.util :refer [set-title!]]))
 
 (defn about-page []
   (fn []
+    (set-title! "Buffalo Infringement Festival - About")
     [:div.col-md-12
       [:div.row
         [:h2 "What is Infringement?"]

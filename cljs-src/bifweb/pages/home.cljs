@@ -32,11 +32,11 @@
 
 (defn home-page []
   (fn []
-    (set-title! "HOME")
+    (set-title! "Buffalo Infringement Festival")
 
     [common/social-links]
 
-    [:div.rowr
+    [:div.row
 
      [:div.left-column.col-md-6
 

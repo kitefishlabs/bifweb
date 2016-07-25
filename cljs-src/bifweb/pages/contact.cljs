@@ -5,7 +5,8 @@
 
 (defn contact-page []
   (fn []
-    (set-title! "Buffalo Infringement Festival - Home")[:h1 "Contact Us"]
+    (set-title! "Buffalo Infringement Festival - Contact Us")
+    [:h1 "Contact Us"]
     [:div.col-md-12
       [:div.row
         [:h2 "General Contacts?"]
@@ -18,7 +19,7 @@
             [:a {:href "mailto:pr@infringebuffalo.org?Subject=Infringement%202016"} "pr@infringebuffalo.org - Send us PR materials."]]]]]
 
       [:div.row
-        [:h2 "Who is Infringement?"]
+        [:h2 "Who Runs Infringement?"]
         [:p "These are your first points of contact if you are a performer, volunteer, or venue owner. This year's organizers include..."
           [:div {:class "who"}
            [:ul
