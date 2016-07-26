@@ -1,8 +1,8 @@
-  (ns bifweb.pages.home
-   (:require [reagent.core :as r]
-             [bifweb.util :refer [set-title!]]
-             [bifweb.session :as session]
-             [bifweb.pages.common :as common]))
+(ns bifweb.pages.home
+  (:require [reagent.core :as r]
+            [bifweb.util :refer [set-title!]]
+            [bifweb.session :as session]
+            [bifweb.pages.common :as common]))
 
 (defonce day 86400000)
 

@@ -29,7 +29,7 @@ p {
   padding-left: 12px;
 }
 li {
-  list-style: square;
+  list-style: circle;
   margin-left: 10px;
 }
 a {
@@ -91,6 +91,7 @@ a:hover {
 }
 .footer {
   background-color: #ffffff;
+  min-height: 48px;
 }
 @media screen and (min-width: 648px) {
   /* app */

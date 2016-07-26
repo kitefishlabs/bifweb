@@ -25,20 +25,13 @@
    of these page navigation events are properly dispatched through secretary so appropriate routing
    can occur. should be called once on app startup"
   []
-  ;(let [h (History.)
-  ;      f (fn [he] ;; goog.History.Event
-  ;          (.log js/console "navigate %o" (clj->js he))
-  ;          (let [token (.-token he)]
-  ;            (if (seq token) ;; preferred over (not (empty? token))
-  ;              (secretary/dispatch! token))))]
-  ;  (events/listen h EventType/NAVIGATE f)
-  ;  (doto h (.setEnabled true))))
-
   (let [h (History.)]
+    (js/console.log "HISTORY HAPPENS")
     (events/listen
       h
       EventType/NAVIGATE
       #(do
+        (js/console.log (str "TKN: " (.-token %)))
         (secretary/dispatch! (.-token %))
         (.log js/console (str "token: " (.-token %)))))
     (doto h (.setEnabled true))))
@@ -93,21 +86,21 @@
              (.highlightBlock js/hljs item))
            (recur (dec i))))))])
 
-(defn markdown [text]
-  (-> text str js/marked html))
+; (defn markdown [text]
+;   (-> text str js/marked html))
+;
+; (defn input-value [input]
+;   (-> input .-target .-value))
+;
+; (defn set-value! [target]
+;   (fn [source] (reset! target (input-value source))))
 
-(defn input-value [input]
-  (-> input .-target .-value))
-
-(defn set-value! [target]
-  (fn [source] (reset! target (input-value source))))
-
-(defn text-input [target & [opts]]
-  [:input (merge
-            {:type "text"
-             :on-change (set-value! target)
-             :value @target}
-            opts)])
+; (defn text-input [target & [opts]]
+;   [:input (merge
+;             {:type "text"
+;              :on-change (set-value! target)
+;              :value @target}
+;             opts)])
 
 (defn link [& [x y & xs :as body]]
   (if (map? x)

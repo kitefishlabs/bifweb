@@ -41,13 +41,16 @@
 ; (secretary/set-config! :prefix "#")
 
 (defroute "/" []
-          (.log js/console "ASDASD")
+          (js/console.log "ASDASD")
           (session/put! :page :home))
 (defroute "/schedule" []
+          (js/console.log "SCHED")
           (session/put! :page :schedule))
 (defroute "/faq" []
+          (js/console.log "FAQ")
           (session/put! :page :faq))
 (defroute "/about" []
+          (js/console.log "ABOUT")
           (session/put! :page :about))
 (defroute "/contact" []
           (session/put! :page :contact))

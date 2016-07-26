@@ -4,6 +4,10 @@
             [bifweb.session :as session])
   (:import goog.History))
 
+(def schedule-href "schedule.php")
+(def db-href "db2/")
+
+
 (defn social-link [url icn]
   (fn []
     [:a {:href url :class "social-link"}
@@ -25,11 +29,11 @@
 
 
 (defn footer []
-  [:div.footer
-   [:p (str "Copyright © " (.getFullYear (js/Date.)))
-
-    " - Powered by: " [:a {:href "http://github.com/kitefishlabs"}
-                       "Kitefish Labs"]]])
+  (fn []
+    [:div.footer
+      [:p
+        (str "Copyright © " (.getFullYear (js/Date.)) " - Powered by: ")
+        [:a {:href "http://github.com/kitefishlabs"} "Kitefish Labs"]]]))
 
 (defn nav-link [uri title page collapsed?]
   [:li {:class (when (= page (session/get :page)) "active")}
@@ -56,20 +60,20 @@
           [:span.icon-bar]]
          [:a.navbar-brand {:href "#/"}
           [:img
-            { :id "sitelogo"
-              :src "/img/bif_2016_header_center.png"
-              :alt "bif-icon"}]]]
+           { :id "sitelogo"
+             :src "/img/bif_2016_header_center.png"
+             :alt "bif-icon"}]]]
         [:div.navbar-collapse.collapse
          (when-not @collapsed? {:class "in"})
          [:ul.nav.navbar-nav
           [nav-link "#/" "Home" :home collapsed?]
-          [nav-link "schedule.php" "Schedule" :schedulephp collapsed?]
+          [nav-link schedule-href "Schedule" :schedulephp collapsed?]
           ;[nav-link "#/schedule" "Experimental" :schedule collapsed?]
           [nav-link "#/faq" "FAQ" :faq collapsed?]
           [nav-link "#/about" "About" :about collapsed?]
           [nav-link "#/contact" "Contact" :contact collapsed?]
           ;[nav-link "#/forum" "Forum" :forum collapsed?]
-          [nav-link "db2/" "Database" :database collapsed?]]]]])))
+          [nav-link db-href "DB" :database collapsed?]]]]])))
 
 (defn header-jumbotron []
   (fn []
@@ -84,7 +88,6 @@
             [:img
               { :class "banner"
                 :id "banner-right"
-                :src "/img/bif_2016_header_center.png"}]
-            [social-links]]]]]))
+                :src "/img/bif_2016_header_center.png"}]]]]]))
 
-(def schedule-href "schedule.php")
+            ;[social-links]]]]]))

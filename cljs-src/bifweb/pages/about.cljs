@@ -25,7 +25,7 @@
         [:h2 "Organizers"]
         [:ul {:class "who"}
           [:li "Cat Herder, PR & Never Wrong: " [:span {:class "who"} "Heather Gring"]]
-          [:li "MUSIC & Always Right: " [:span {:class "who"} "Curt Rotterdam"]]
+          [:li "Music & Always Right: " [:span {:class "who"} "Curt Rotterdam"]]
           [:li "Music & Credibility Representative: " [:span {:class "who"} "Marty Boratin"]]
           [:li "Electronic & Other Music: " [:span {:class "who"} "Steven Bader & Matt “Matka” Karnes"]]
           [:li "Dance & Social-Media-Mass-Tagger: " [:span {:class "who"} "Leslie Fineberg"]]

@@ -29,7 +29,7 @@
              :answer "Look for the schedule in The Public the week of the festival. In 2016 the schedule will appear in the Public on July 27."}
             {:question " What about last minute changes and cancellations?"
              :answer "The printed schedule is designed several weeks before the actual events, so there are likely to be changes. The online schedule is the most up-to-date source for changes, cancellations, added performances, and contains detailed descriptions of installations and performances."}]}
-                ; [:a {:href common/schedule-href}] 
+                ; [:a {:href common/schedule-href}]
 
 
 
@@ -125,7 +125,8 @@
       [:div.col-md-12 {:class "faq-topic"}
        [:h2 topic]
        (for [quest quests]
-         ^{:key {:id quest}} [markup-question quest])])))
+         ^{:key (-> quest :question)} 
+         [markup-question quest])])))
 
 (defn faq-page []
   (fn []
@@ -135,4 +136,5 @@
         [:h1 "FAQs"]]]
     [:ul {:class "faq-topics-list"}
       (for [topic topicized-qna]
-        ^{:key (:id topic)} [markup-topic topic])]))
+        ^{:key (:topic topic)}
+        [markup-topic topic])]))
