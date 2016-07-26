@@ -89,7 +89,7 @@
          {:class "box featured-2"}
 
          [:h2 "Infringement Schedule"]
-         [:p [:a {:href common/schedule-href} "The schedule is now live."] " The schedule will appear as an insert in the Public on July 26."]]
+         [:p [:a {:href common/schedule-href} "The schedule is now live."] " The schedule will appear as an insert in the Public on Wednesday July 27."]]
 
        [:div.row
          {:class "box"}

@@ -8,6 +8,7 @@
             [bifweb.pages.faq :refer [faq-page]]
             [bifweb.pages.about :refer [about-page]]
             [bifweb.pages.contact :refer [contact-page]]
+            [bifweb.util :refer [on-load]]
 
             [bifweb.pages.venues :refer [venues-page]]
 
@@ -62,6 +63,7 @@
 
 
 ;; Initialize app
+(on-load)
 
 (defn mount-components []
   (reagent/render [#'navbar] (.getElementById js/document "navbar"))

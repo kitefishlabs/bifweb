@@ -11,8 +11,9 @@
         [:h2 "What is Infringement?"]
         [:p "The buffalo “infringement” festival is a non-profit-driven, non-hierarchical grassroots endeavor bringing
           together a broad range of eclectic, independent, experimental, and controversial art of all forms. Visual,
-          performing, musical, and media arts are all welcome here. Taking place in multiple venues in and around Buffalo’s
-          Allentown District, the festival is an annual eleven-day event running from the last weekend of July through the
+          performing, musical, and media arts are all welcome here."]
+        [:p "Taking place in multiple venues in and around Buffalo’s Allentown District,
+          the festival is an annual eleven-day event running from the last weekend of July through the
           first weekend of August. See the Infringement Festival International's "
           [:a {:href "#mandate"} "mandate"]
           " and our 2006 Mission Statement to learn more."]
@@ -31,7 +32,6 @@
           [:li "Dance & Social-Media-Mass-Tagger: " [:span {:class "who"} "Leslie Fineberg"]]
           [:li "Literary & Motherly Love: " [:span {:class "who"} "Marek Parker"]]
           [:li "Theater & Umlaut Denier: " [:span {:class "who"} "Jessica Knoerl"]]
-          [:li "Theater & Summarization Savant: " [:span {:class "who"} "Laura Lonsky"]]
           [:li "Film, Fundraising, Web, Tech: " [:span {:class "who"} "Tom Stoll"]]
           [:li "Visual Arts & Kung Fu Feng Shui: " [:span {:class "who"} "Amy Duengfelder & Cat McCarthy"]]
           [:li "Database, Treasurer, Omniscient Narration: " [:span " Dave Pape"]]

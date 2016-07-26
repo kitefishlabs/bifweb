@@ -132,3 +132,14 @@
 
 ;(assert (= (trim-list-of-strings ["foo/goo.ml" " foo/goo.ml " "foo/goo.ml   "])
 ;          (("foo/goo.ml" "foo/goo.ml" "foo/goo.ml"))))
+
+(defn on-load []
+ (let
+  [now (.getTime (js/Date.))
+   page-load-time (- now js/performance.timing.navigationStart)]
+  (js/console.log (str "User-perceived page loading time:" page-load-time))))
+
+; function onLoad() {
+;                    var now = new Date().getTime();
+;                    var page_load_time = now - performance.timing.navigationStart;
+;                    console.log("User-perceived page loading time: " + page_load_time)};

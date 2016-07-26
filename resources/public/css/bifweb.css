@@ -29,7 +29,7 @@ p {
   padding-left: 12px;
 }
 li {
-  list-style: circle;
+  list-style: square;
   margin-left: 10px;
 }
 a {
@@ -92,6 +92,7 @@ a:hover {
 .footer {
   background-color: #ffffff;
   min-height: 48px;
+  padding: 16px;
 }
 @media screen and (min-width: 648px) {
   /* app */
@@ -129,19 +130,19 @@ a:hover {
   .jumbotron .social-links-bar {
     margin: -40px 0 0 132px;
   }
-  img#banner-left {
-    width: 25%;
-    margin: 0;
+  .jumbotron img#banner-left {
+    width: 64px;
+    margin-left: -10px;
     float: left;
     clear: none;
   }
-  img#banner-right {
-    width: 65%;
+  .jumbotron img#banner-right {
+    width: 260px;
     float: left;
     clear: none;
   }
   .social-links-bar {
-    width: 200px;
+    width: 360px;
     float: left;
     clear: both;
   }

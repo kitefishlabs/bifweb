@@ -1,13 +1,16 @@
 (ns bifweb.pages.contact
   (:require [reagent.core :as r]
             [bifweb.util :refer [set-title!]]
-            [bifweb.session :as session]))
+            [bifweb.session :as session]
+            [bifweb.pages.common :refer [social-links]]))
 
 (defn contact-page []
   (fn []
     (set-title! "Buffalo Infringement Festival - Contact Us")
     [:h1 "Contact Us"]
     [:div.col-md-12
+      [:div.row
+        [social-links]]
       [:div.row
         [:h2 "General Contacts?"]
         [:p "The following email addresses are the general contact points for the festival:"]
