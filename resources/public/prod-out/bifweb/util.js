@@ -14,14 +14,14 @@ return (new Date()).getTime();
 });
 bifweb.util.GET = (function bifweb$util$GET(var_args){
 var args__7221__auto__ = [];
-var len__7214__auto___9771 = arguments.length;
-var i__7215__auto___9772 = (0);
+var len__7214__auto___13178 = arguments.length;
+var i__7215__auto___13179 = (0);
 while(true){
-if((i__7215__auto___9772 < len__7214__auto___9771)){
-args__7221__auto__.push((arguments[i__7215__auto___9772]));
+if((i__7215__auto___13179 < len__7214__auto___13178)){
+args__7221__auto__.push((arguments[i__7215__auto___13179]));
 
-var G__9773 = (i__7215__auto___9772 + (1));
-i__7215__auto___9772 = G__9773;
+var G__13180 = (i__7215__auto___13179 + (1));
+i__7215__auto___13179 = G__13180;
 continue;
 } else {
 }
@@ -32,61 +32,24 @@ var argseq__7222__auto__ = ((((1) < args__7221__auto__.length))?(new cljs.core.I
 return bifweb.util.GET.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__7222__auto__);
 });
 
-bifweb.util.GET.cljs$core$IFn$_invoke$arity$variadic = (function (url,p__9769){
-var vec__9770 = p__9769;
-var opts = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__9770,(0),null);
+bifweb.util.GET.cljs$core$IFn$_invoke$arity$variadic = (function (url,p__13176){
+var vec__13177 = p__13176;
+var opts = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__13177,(0),null);
 return ajax.core.GET.cljs$core$IFn$_invoke$arity$variadic([cljs.core.str(context),cljs.core.str(url)].join(''),cljs.core.array_seq([cljs.core.update_in.cljs$core$IFn$_invoke$arity$5(opts,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$params], null),cljs.core.assoc,cljs.core.cst$kw$timestamp,bifweb.util.millis())], 0));
 });
 
 bifweb.util.GET.cljs$lang$maxFixedArity = (1);
 
-bifweb.util.GET.cljs$lang$applyTo = (function (seq9767){
-var G__9768 = cljs.core.first(seq9767);
-var seq9767__$1 = cljs.core.next(seq9767);
-return bifweb.util.GET.cljs$core$IFn$_invoke$arity$variadic(G__9768,seq9767__$1);
+bifweb.util.GET.cljs$lang$applyTo = (function (seq13174){
+var G__13175 = cljs.core.first(seq13174);
+var seq13174__$1 = cljs.core.next(seq13174);
+return bifweb.util.GET.cljs$core$IFn$_invoke$arity$variadic(G__13175,seq13174__$1);
 });
 bifweb.util.POST = (function bifweb$util$POST(url,opts){
 return ajax.core.POST.cljs$core$IFn$_invoke$arity$variadic([cljs.core.str(context),cljs.core.str(url)].join(''),cljs.core.array_seq([opts], 0));
 });
 bifweb.util.text = (function bifweb$util$text(id){
 return bifweb.session.get_in(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$locale,id], null));
-});
-/**
- * hooks into the browser's navigation (e.g. user clicking on links, redirects, etc) such that any
- * of these page navigation events are properly dispatched through secretary so appropriate routing
- * can occur. should be called once on app startup
- */
-bifweb.util.hook_browser_navigation_BANG_ = (function bifweb$util$hook_browser_navigation_BANG_(){
-var h = (new goog.History());
-console.log("HISTORY HAPPENS");
-
-var G__9782_9787 = h;
-var G__9783_9788 = goog.history.EventType.NAVIGATE;
-var G__9784_9789 = ((function (G__9782_9787,G__9783_9788,h){
-return (function (p1__9774_SHARP_){
-var G__9785_9790 = [cljs.core.str("TKN: "),cljs.core.str(p1__9774_SHARP_.token)].join('');
-console.log(G__9785_9790);
-
-secretary.core.dispatch_BANG_(p1__9774_SHARP_.token);
-
-return console.log([cljs.core.str("token: "),cljs.core.str(p1__9774_SHARP_.token)].join(''));
-});})(G__9782_9787,G__9783_9788,h))
-;
-goog.events.listen(G__9782_9787,G__9783_9788,G__9784_9789);
-
-var G__9786 = h;
-G__9786.setEnabled(true);
-
-return G__9786;
-});
-bifweb.util.format_title_url = (function bifweb$util$format_title_url(id,title){
-if(cljs.core.truth_(title)){
-return [cljs.core.str(id),cljs.core.str("-"),cljs.core.str((function (){var G__9792 = clojure.string.join.cljs$core$IFn$_invoke$arity$2("-",cljs.core.re_seq(/[a-zA-Z0-9]+/,title));
-return encodeURI(G__9792);
-})())].join('');
-} else {
-return null;
-}
 });
 bifweb.util.url = (function bifweb$util$url(parts){
 var temp__4655__auto__ = cljs.core.not_empty(context);
@@ -99,14 +62,14 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.str,parts);
 });
 bifweb.util.set_location_BANG_ = (function bifweb$util$set_location_BANG_(var_args){
 var args__7221__auto__ = [];
-var len__7214__auto___9794 = arguments.length;
-var i__7215__auto___9795 = (0);
+var len__7214__auto___13182 = arguments.length;
+var i__7215__auto___13183 = (0);
 while(true){
-if((i__7215__auto___9795 < len__7214__auto___9794)){
-args__7221__auto__.push((arguments[i__7215__auto___9795]));
+if((i__7215__auto___13183 < len__7214__auto___13182)){
+args__7221__auto__.push((arguments[i__7215__auto___13183]));
 
-var G__9796 = (i__7215__auto___9795 + (1));
-i__7215__auto___9795 = G__9796;
+var G__13184 = (i__7215__auto___13183 + (1));
+i__7215__auto___13183 = G__13184;
 continue;
 } else {
 }
@@ -123,14 +86,43 @@ return location.href = bifweb.util.url(url_parts);
 
 bifweb.util.set_location_BANG_.cljs$lang$maxFixedArity = (0);
 
-bifweb.util.set_location_BANG_.cljs$lang$applyTo = (function (seq9793){
-return bifweb.util.set_location_BANG_.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq9793));
+bifweb.util.set_location_BANG_.cljs$lang$applyTo = (function (seq13181){
+return bifweb.util.set_location_BANG_.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq13181));
 });
-bifweb.util.set_venues_url = (function bifweb$util$set_venues_url(p__9797){
-var map__9800 = p__9797;
-var map__9800__$1 = ((((!((map__9800 == null)))?((((map__9800.cljs$lang$protocol_mask$partition0$ & (64))) || (map__9800.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__9800):map__9800);
-var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__9800__$1,cljs.core.cst$kw$id);
-return bifweb.util.set_location_BANG_.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq(["#/venues/",id], 0));
+/**
+ * hooks into the browser's navigation (e.g. user clicking on links, redirects, etc) such that any
+ * of these page navigation events are properly dispatched through secretary so appropriate routing
+ * can occur. should be called once on app startup
+ */
+bifweb.util.hook_browser_navigation_BANG_ = (function bifweb$util$hook_browser_navigation_BANG_(){
+var h = (new goog.History());
+console.log("HISTORY HAPPENS");
+
+var G__13193_13198 = h;
+var G__13194_13199 = goog.history.EventType.NAVIGATE;
+var G__13195_13200 = ((function (G__13193_13198,G__13194_13199,h){
+return (function (p1__13185_SHARP_){
+var G__13196_13201 = [cljs.core.str("TKN: "),cljs.core.str(p1__13185_SHARP_.token)].join('');
+console.log(G__13196_13201);
+
+return secretary.core.dispatch_BANG_(p1__13185_SHARP_.token);
+});})(G__13193_13198,G__13194_13199,h))
+;
+goog.events.listen(G__13193_13198,G__13194_13199,G__13195_13200);
+
+var G__13197 = h;
+G__13197.setEnabled(true);
+
+return G__13197;
+});
+bifweb.util.format_title_url = (function bifweb$util$format_title_url(id,title){
+if(cljs.core.truth_(title)){
+return [cljs.core.str(id),cljs.core.str("-"),cljs.core.str((function (){var G__13203 = clojure.string.join.cljs$core$IFn$_invoke$arity$2("-",cljs.core.re_seq(/[a-zA-Z0-9]+/,title));
+return encodeURI(G__13203);
+})())].join('');
+} else {
+return null;
+}
 });
 bifweb.util.set_page_BANG_ = (function bifweb$util$set_page_BANG_(page){
 return bifweb.session.put_BANG_(cljs.core.cst$kw$page,page);
@@ -154,22 +146,22 @@ return (handler.cljs$core$IFn$_invoke$arity$1 ? handler.cljs$core$IFn$_invoke$ar
 })], null));
 });
 bifweb.util.html = (function bifweb$util$html(content){
-return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.util.mounted_component(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$dangerouslySetInnerHTML,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$__html,content], null)], null)], null),(function (p1__9802_SHARP_){
-var nodes = p1__9802_SHARP_.querySelectorAll("pre code");
+return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.util.mounted_component(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$dangerouslySetInnerHTML,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$__html,content], null)], null)], null),(function (p1__13204_SHARP_){
+var nodes = p1__13204_SHARP_.querySelectorAll("pre code");
 var i = nodes.length;
 while(true){
 if((i < (0))){
 return null;
 } else {
-var temp__4657__auto___9803 = nodes.item(i);
-if(cljs.core.truth_(temp__4657__auto___9803)){
-var item_9804 = temp__4657__auto___9803;
-hljs.highlightBlock(item_9804);
+var temp__4657__auto___13205 = nodes.item(i);
+if(cljs.core.truth_(temp__4657__auto___13205)){
+var item_13206 = temp__4657__auto___13205;
+hljs.highlightBlock(item_13206);
 } else {
 }
 
-var G__9805 = (i - (1));
-i = G__9805;
+var G__13207 = (i - (1));
+i = G__13207;
 continue;
 }
 break;
@@ -178,14 +170,14 @@ break;
 });
 bifweb.util.link = (function bifweb$util$link(var_args){
 var args__7221__auto__ = [];
-var len__7214__auto___9809 = arguments.length;
-var i__7215__auto___9810 = (0);
+var len__7214__auto___13211 = arguments.length;
+var i__7215__auto___13212 = (0);
 while(true){
-if((i__7215__auto___9810 < len__7214__auto___9809)){
-args__7221__auto__.push((arguments[i__7215__auto___9810]));
+if((i__7215__auto___13212 < len__7214__auto___13211)){
+args__7221__auto__.push((arguments[i__7215__auto___13212]));
 
-var G__9811 = (i__7215__auto___9810 + (1));
-i__7215__auto___9810 = G__9811;
+var G__13213 = (i__7215__auto___13212 + (1));
+i__7215__auto___13212 = G__13213;
 continue;
 } else {
 }
@@ -196,12 +188,12 @@ var argseq__7222__auto__ = ((((0) < args__7221__auto__.length))?(new cljs.core.I
 return bifweb.util.link.cljs$core$IFn$_invoke$arity$variadic(argseq__7222__auto__);
 });
 
-bifweb.util.link.cljs$core$IFn$_invoke$arity$variadic = (function (p__9807){
-var vec__9808 = p__9807;
-var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__9808,(0),null);
-var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__9808,(1),null);
-var xs = cljs.core.nthnext(vec__9808,(2));
-var body = vec__9808;
+bifweb.util.link.cljs$core$IFn$_invoke$arity$variadic = (function (p__13209){
+var vec__13210 = p__13209;
+var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__13210,(0),null);
+var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__13210,(1),null);
+var xs = cljs.core.nthnext(vec__13210,(2));
+var body = vec__13210;
 if(cljs.core.map_QMARK_(x)){
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$a,cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$href,bifweb.util.url(y)], null),x], 0)),xs], null);
 } else {
@@ -211,19 +203,19 @@ return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMP
 
 bifweb.util.link.cljs$lang$maxFixedArity = (0);
 
-bifweb.util.link.cljs$lang$applyTo = (function (seq9806){
-return bifweb.util.link.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq9806));
+bifweb.util.link.cljs$lang$applyTo = (function (seq13208){
+return bifweb.util.link.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq13208));
 });
 bifweb.util.nav_link = (function bifweb$util$nav_link(var_args){
 var args__7221__auto__ = [];
-var len__7214__auto___9817 = arguments.length;
-var i__7215__auto___9818 = (0);
+var len__7214__auto___13219 = arguments.length;
+var i__7215__auto___13220 = (0);
 while(true){
-if((i__7215__auto___9818 < len__7214__auto___9817)){
-args__7221__auto__.push((arguments[i__7215__auto___9818]));
+if((i__7215__auto___13220 < len__7214__auto___13219)){
+args__7221__auto__.push((arguments[i__7215__auto___13220]));
 
-var G__9819 = (i__7215__auto___9818 + (1));
-i__7215__auto___9818 = G__9819;
+var G__13221 = (i__7215__auto___13220 + (1));
+i__7215__auto___13220 = G__13221;
 continue;
 } else {
 }
@@ -234,20 +226,20 @@ var argseq__7222__auto__ = ((((2) < args__7221__auto__.length))?(new cljs.core.I
 return bifweb.util.nav_link.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),argseq__7222__auto__);
 });
 
-bifweb.util.nav_link.cljs$core$IFn$_invoke$arity$variadic = (function (path,label,p__9815){
-var vec__9816 = p__9815;
-var on_click = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__9816,(0),null);
+bifweb.util.nav_link.cljs$core$IFn$_invoke$arity$variadic = (function (path,label,p__13217){
+var vec__13218 = p__13217;
+var on_click = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__13218,(0),null);
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$li,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$on_DASH_click,on_click], null),bifweb.util.link.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([path,bifweb.util.text(label)], 0))], null);
 });
 
 bifweb.util.nav_link.cljs$lang$maxFixedArity = (2);
 
-bifweb.util.nav_link.cljs$lang$applyTo = (function (seq9812){
-var G__9813 = cljs.core.first(seq9812);
-var seq9812__$1 = cljs.core.next(seq9812);
-var G__9814 = cljs.core.first(seq9812__$1);
-var seq9812__$2 = cljs.core.next(seq9812__$1);
-return bifweb.util.nav_link.cljs$core$IFn$_invoke$arity$variadic(G__9813,G__9814,seq9812__$2);
+bifweb.util.nav_link.cljs$lang$applyTo = (function (seq13214){
+var G__13215 = cljs.core.first(seq13214);
+var seq13214__$1 = cljs.core.next(seq13214);
+var G__13216 = cljs.core.first(seq13214__$1);
+var seq13214__$2 = cljs.core.next(seq13214__$1);
+return bifweb.util.nav_link.cljs$core$IFn$_invoke$arity$variadic(G__13215,G__13216,seq13214__$2);
 });
 bifweb.util.error_handler = (function bifweb$util$error_handler(resp){
 return console.log([cljs.core.str("something bad happened: "),cljs.core.str(resp)].join(''));
@@ -259,14 +251,14 @@ return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(m__$1,k,"");
 return res;
 });
 bifweb.util.trim_list_of_strings = (function bifweb$util$trim_list_of_strings(vnames){
-var trimmed = cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__9820_SHARP_){
-return clojure.string.trim([cljs.core.str(p1__9820_SHARP_)].join(''));
+var trimmed = cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__13222_SHARP_){
+return clojure.string.trim([cljs.core.str(p1__13222_SHARP_)].join(''));
 }),vnames);
 return trimmed;
 });
 bifweb.util.on_load = (function bifweb$util$on_load(){
 var now = (new Date()).getTime();
 var page_load_time = (now - performance.timing.navigationStart);
-var G__9822 = [cljs.core.str("User-perceived page loading time:"),cljs.core.str(page_load_time)].join('');
-return console.log(G__9822);
+var G__13224 = [cljs.core.str("User-perceived page loading time:"),cljs.core.str(page_load_time)].join('');
+return console.log(G__13224);
 });

@@ -13,7 +13,8 @@
                  [reagent "0.5.1"]
                  [secretary "1.2.3"]
                  [cljs-ajax "0.5.4"]
-                 [prismatic/dommy "1.1.0"]]
+                 [prismatic/dommy "1.1.0"]
+                 [hickory "0.6.0"]]
 
   :plugins [[lein-figwheel "0.5.2"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]
@@ -22,7 +23,8 @@
   :source-paths ["cljs-src"]
 
   :profiles {:dev { :dependencies [[com.cemerick/piggieback "0.2.1"]
-                                   [figwheel-sidecar "0.5.2"]]
+                                   [figwheel-sidecar "0.5.2"]
+                                   [proto-repl "0.3.1"]]
                     :source-paths ["cljs-src"]}}
 
   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}

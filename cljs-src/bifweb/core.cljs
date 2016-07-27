@@ -4,13 +4,13 @@
             [bifweb.session :as session]
             [bifweb.pages.common :refer [header-jumbotron footer navbar]]
             [bifweb.pages.home :refer [home-page]]
-            [bifweb.pages.schedule :refer [schedule-page]]
             [bifweb.pages.faq :refer [faq-page]]
             [bifweb.pages.about :refer [about-page]]
             [bifweb.pages.contact :refer [contact-page]]
             [bifweb.util :refer [on-load]]
 
-            [bifweb.pages.venues :refer [venues-page]]
+            [bifweb.pages.schedule :refer [schedule-page]]
+            [bifweb.pages.allshows :refer [allshows-page]]
 
             [bifweb.util :refer [hook-browser-navigation!]])
   (:import goog.History))
@@ -28,7 +28,7 @@
    :faq #'faq-page
    :about #'about-page
    :contact #'contact-page
-   :allvenues #'venues-page
+   :allshows #'allshows-page
    :default #'home-page})
 
 (defn page []
@@ -42,22 +42,18 @@
 ; (secretary/set-config! :prefix "#")
 
 (defroute "/" []
-          (js/console.log "ASDASD")
           (session/put! :page :home))
 (defroute "/schedule" []
-          (js/console.log "SCHED")
           (session/put! :page :schedule))
 (defroute "/faq" []
-          (js/console.log "FAQ")
           (session/put! :page :faq))
 (defroute "/about" []
-          (js/console.log "ABOUT")
           (session/put! :page :about))
 (defroute "/contact" []
           (session/put! :page :contact))
 
-(defroute "/venues" []
-          (session/put! :page :allvenues))
+(defroute "/allshows" []
+          (session/put! :page :allshows))
 ;(defroute "/venue/:id" {:as params}
 ;          (session/put! :page :venue))
 
@@ -77,7 +73,7 @@
   ; additional GETs
   ; yuggoth fetches here based on the URL
   ;(fetch-venue ID set=venue-and-home-page!)
-(session/reset! {:page :home})
+; (session/reset! {:page :home})
 (mount-components)
 
 (defn fig-reload []

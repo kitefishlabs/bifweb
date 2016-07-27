@@ -249,13 +249,21 @@ span.who {
   clear: both;
 }
 .emptybox {
-  width: 48px;
+  float: left;
+  clear: none;
+  width: 52px;
   height: 48px;
   background-color: #e7f5fb;
 }
 .datebox {
   float: left;
   clear: none;
-  min-width: 48px;
+  min-width: 52px;
   height: 48px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #e7f5fb;
+}
+.datebox a {
+  color: #000000;
 }

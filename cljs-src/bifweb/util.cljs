@@ -20,6 +20,15 @@
 (defn text [id]
   (session/get-in [:locale id]))
 
+
+(defn url [parts]
+  (if-let [context (not-empty js/context)]
+    (apply (partial str context "/") parts)
+    (apply str parts)))
+
+(defn set-location! [& url-parts]
+  (set! (.-href js/location) (url url-parts)))
+
 (defn hook-browser-navigation!
   "hooks into the browser's navigation (e.g. user clicking on links, redirects, etc) such that any
    of these page navigation events are properly dispatched through secretary so appropriate routing
@@ -32,8 +41,8 @@
       EventType/NAVIGATE
       #(do
         (js/console.log (str "TKN: " (.-token %)))
-        (secretary/dispatch! (.-token %))
-        (.log js/console (str "token: " (.-token %)))))
+        (secretary/dispatch! (.-token %))))
+        ; (.log js/console (str "token: " (.-token %)))))
     (doto h (.setEnabled true))))
 
 (defn format-title-url [id title]
@@ -43,17 +52,11 @@
          (js/encodeURI)
          (str id "-"))))
 
-(defn url [parts]
-  (if-let [context (not-empty js/context)]
-    (apply (partial str context "/") parts)
-    (apply str parts)))
 
-(defn set-location! [& url-parts]
-  (set! (.-href js/location) (url url-parts)))
 
-(defn set-venues-url [{:keys [id]}]
-  (set-location! "#/venues/" id))
-
+; (defn set-venues-url [{:keys [id]}]
+;   (set-location! "#/venues/" id))
+;
 
 (defn set-page! [page]
   (session/put! :page page))
@@ -134,10 +137,10 @@
 ;          (("foo/goo.ml" "foo/goo.ml" "foo/goo.ml"))))
 
 (defn on-load []
- (let
-  [now (.getTime (js/Date.))
-   page-load-time (- now js/performance.timing.navigationStart)]
-  (js/console.log (str "User-perceived page loading time:" page-load-time))))
+  (let
+    [ now (.getTime (js/Date.))
+      page-load-time (- now js/performance.timing.navigationStart)]
+    (js/console.log (str "User-perceived page loading time:" page-load-time))))
 
 ; function onLoad() {
 ;                    var now = new Date().getTime();

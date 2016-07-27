@@ -3,47 +3,45 @@
             [bifweb.util :refer [set-title!]]
             [bifweb.session :as session]))
 
+(defn datebox-day [daynum date]
+ (fn []
+   [:div.datebox
+    [:a {:href (str daynum)} date]]))
+
 (defn schedule-page []
-  (fn [] [:div.col-md-12]
+  (fn []
+   [:div.col-md-12
     [:div.row
       [:h2 "2016 Festival Schedule"]
-      [:p "..."]]
-    [:div.row
-      [:h3 "Search"]
-      [:p "..."]]
+      [:p "The 2016 Buffalo Infringement Festival runs from Thursday, July 28,
+           through Sunday, August 7."]]
+    ; [:div.row
+      ; [:h3 "Search"]
+      ; [:p "..."]]
     [:div.row
       [:h3 "Calendar"]
       [:div.daterow
-        [:div.datebox.empty]
-        [:div.datebox.empty]
-        [:div.datebox.empty]
-        [:div.datebox
-         [:a {:href "#/day/1"} "28"]]
-        [:div.datebox
-         [:a {:href "#/day/2"} "29"]]
-        [:div.datebox
-         [:a {:href "#/day/3"} "30"]]
-        [:div.datebox
-         [:a {:href "#/day/4"} "31"]]]
+        [:div.emptybox]
+        [:div.emptybox]
+        [:div.emptybox]
+        [:div.emptybox]
+        [datebox-day 1 28]
+        [datebox-day 2 29]
+        [datebox-day 3 30]]
 
       [:div.daterow
-        [:div.datebox
-          [:a {:href "#/day/5"} "1"]]
-        [:div.datebox
-         [:a {:href "#/day/6"} "2"]]
-        [:div.datebox
-          [:a {:href "#/day/7"} "3"]]
-        [:div.datebox
-          [:a {:href "#/day/8"} "4"]]
-        [:div.datebox
-          [:a {:href "#/day/9"} "5"]]
-        [:div.datebox
-          [:a {:href "#/day/10"} "6"]]
-        [:div.datebox
-          [:a {:href "#/day/11"} "7"]]]]
+        [datebox-day 4 31]
+        [datebox-day 5 1]
+        [datebox-day 6 2]
+        [datebox-day 8 3]
+        [datebox-day 9 4]
+        [datebox-day 10 5]
+        [datebox-day 11 6]]
+
+     [:div.]]
     [:div.row
-      [:p [:a {:href "#/shows/all"} "All"]]
-      [:p [:a {:href "#/genres/all"} "Categories"]]
-      [:p [:a {:href "#/venues"} "Venues"]]]
+      [:p [:a {:href "#/allshows"} "All Shows"]]
+      [:p [:a {:href "allcategories.php"} "Categories of Shows"]]
+      [:p [:a {:href "allvenues.php"} "All Venues"]]]
     [:div.row
-      [:p "EMBEDDED MAP"]]))
+      [:p "EMBEDDED MAP [coming soon]"]]]))

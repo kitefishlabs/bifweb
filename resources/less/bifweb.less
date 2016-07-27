@@ -353,7 +353,9 @@ span.who {
 }
 
 .emptybox {
-  width:48px;
+  float: left;
+  clear: none;
+  width: 52px;
   height: 48px;
   background-color: @color-blue-2;
 }
@@ -361,6 +363,16 @@ span.who {
 .datebox {
   float: left;
   clear: none;
-  min-width: 48px;
+  min-width: 52px;
   height: 48px;
+  padding: 15px;
+  background-color: @color-white;
+  border: 1px solid @color-blue-2 ;
+  a {
+    color: @color-black;
+  }
+}
+
+.datebox > a {
+
 }
