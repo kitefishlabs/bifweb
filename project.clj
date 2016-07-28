@@ -24,7 +24,10 @@
 
   :profiles {:dev { :dependencies [[com.cemerick/piggieback "0.2.1"]
                                    [figwheel-sidecar "0.5.2"]
-                                   [proto-repl "0.3.1"]]
+                                   [proto-repl "0.3.1"]
+                                   [clj-http "2.2.0"]
+                                   [hickory "0.6.0"]]
+
                     :source-paths ["cljs-src"]}}
 
   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}

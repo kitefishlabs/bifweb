@@ -81,7 +81,8 @@
 
       [:div.row
         [:h2 "Sponsors"]
-        [:ul
+        [:div.col-md-4
+         [:ul
           [:li "Allentown Music"]
           [:li "Allen St. Consulting"]
           [:li "Illos Pianos"]
@@ -93,6 +94,59 @@
           [:li "James Moffitt"]
           [:li "Rob Peters - madjack3dprints.com"]
           [:li "JR Audio - Jesse Rejewski"]]]
+        [:div.col-md-8
+         [:div.row
+
+          [:div.ad.ad-left
+           [:img
+            {:src "img/AllenAssoc.jpg"
+             :width "200px;"
+             :alt "Allentown Association Ad"}]]
+          [:div.ad.ad-right
+           [:img
+            {:src "img/allenconsult.jpg"
+             :width "200px"
+             :alt "Allentown Consulting"}]]
+
+          [:div.ad.ad-full
+           [:img
+            {:src "img/allentown_music.jpg"
+             :width "600px"
+             :alt "Allentown Music"}]]
+
+          [:div.ad.ad-left
+           [:img
+            {:src "img/illios.png"
+             :width "200px"
+             :alt "Illios Pianos"}]]
+          [:div.ad.ad-right
+           [:img
+            {:src "img/TAZA_logo.jpg"
+             :width "200px"
+             :alt "TAZA Coffee and Tea"}]]
+
+          [:div.ad.ad-full
+           [:img
+            {:src "img/lovejoy.jpg"
+             :width "200px"
+             :alt "Lovejoy Pizza"}]]
+
+          [:div.ad.ad-left
+           [:img
+            {:src "img/Wasteland_Studios.jpg"
+             :width "200px"
+             :alt "Wasteland Studios"}]]
+          [:div.ad.ad-right
+           [:img
+            {:src "img/werder-chiro.jpg"
+             :width "200px"
+             :alt "Werder Chiropractic"}]]
+
+          [:div.ad.ad-left
+           [:img
+            {:src "img/YarMos.jpg"
+             :width "200px"
+             :alt "YarMo's"}]]]]]
 
       [:div.row
         [:h2 "Direct Monetary Donations"]

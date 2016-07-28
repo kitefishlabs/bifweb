@@ -18,8 +18,8 @@
 // See http://clang.llvm.org/docs/ClangFormatStyleOptions.html#disabling-formatting-on-a-piece-of-code
 // clang-format off
 
-goog.addDependency('caja/string/html/htmlparser.js', ['goog.string.html', 'goog.string.html.HtmlParser', 'goog.string.html.HtmlParser.EFlags', 'goog.string.html.HtmlParser.Elements', 'goog.string.html.HtmlParser.Entities', 'goog.string.html.HtmlSaxHandler'], [], false);
-goog.addDependency('caja/string/html/htmlsanitizer.js', ['goog.string.html.HtmlSanitizer', 'goog.string.html.HtmlSanitizer.AttributeType', 'goog.string.html.HtmlSanitizer.Attributes', 'goog.string.html.htmlSanitize'], ['goog.string.StringBuffer', 'goog.string.html.HtmlParser', 'goog.string.html.HtmlSaxHandler'], false);
+goog.addDependency('caja/string/html/htmlparser.js', ['goog.string.html', 'goog.string.html.HtmlParserPC', 'goog.string.html.HtmlParserPC.EFlags', 'goog.string.html.HtmlParserPC.Elements', 'goog.string.html.HtmlParserPC.Entities', 'goog.string.html.HtmlSaxHandler'], [], false);
+goog.addDependency('caja/string/html/htmlsanitizer.js', ['goog.string.html.HtmlSanitizer', 'goog.string.html.HtmlSanitizer.AttributeType', 'goog.string.html.HtmlSanitizer.Attributes', 'goog.string.html.htmlSanitize'], ['goog.string.StringBuffer', 'goog.string.html.HtmlParserPC', 'goog.string.html.HtmlSaxHandler'], false);
 goog.addDependency('dojo/dom/query.js', ['goog.dom.query'], ['goog.array', 'goog.dom', 'goog.functions', 'goog.string', 'goog.userAgent'], false);
 goog.addDependency('jpeg_encoder/jpeg_encoder_basic.js', ['goog.crypt.JpegEncoder'], ['goog.crypt.base64'], false);
 goog.addDependency('loremipsum/text/loremipsum.js', ['goog.text.LoremIpsum'], ['goog.array', 'goog.math', 'goog.string', 'goog.structs.Map', 'goog.structs.Set'], false);
@@ -565,7 +565,7 @@ goog.addDependency('json/json.js', ['goog.json', 'goog.json.Replacer', 'goog.jso
 goog.addDependency('json/json_perf.js', ['goog.jsonPerf'], ['goog.dom', 'goog.json', 'goog.math', 'goog.string', 'goog.testing.PerformanceTable', 'goog.testing.PropertyReplacer', 'goog.testing.jsunit'], false);
 goog.addDependency('json/json_test.js', ['goog.jsonTest'], ['goog.functions', 'goog.json', 'goog.testing.jsunit', 'goog.userAgent'], false);
 goog.addDependency('json/nativejsonprocessor.js', ['goog.json.NativeJsonProcessor'], ['goog.asserts', 'goog.json.Processor'], false);
-goog.addDependency('json/processor.js', ['goog.json.Processor'], ['goog.string.Parser', 'goog.string.Stringifier'], false);
+goog.addDependency('json/processor.js', ['goog.json.Processor'], ['goog.string.ParserPC', 'goog.string.Stringifier'], false);
 goog.addDependency('json/processor_test.js', ['goog.json.processorTest'], ['goog.json.EvalJsonProcessor', 'goog.json.NativeJsonProcessor', 'goog.testing.jsunit', 'goog.userAgent'], false);
 goog.addDependency('labs/dom/pagevisibilitymonitor.js', ['goog.labs.dom.PageVisibilityEvent', 'goog.labs.dom.PageVisibilityMonitor', 'goog.labs.dom.PageVisibilityState'], ['goog.dom', 'goog.dom.vendor', 'goog.events', 'goog.events.Event', 'goog.events.EventTarget', 'goog.events.EventType', 'goog.memoize'], false);
 goog.addDependency('labs/dom/pagevisibilitymonitor_test.js', ['goog.labs.dom.PageVisibilityMonitorTest'], ['goog.events', 'goog.functions', 'goog.labs.dom.PageVisibilityMonitor', 'goog.testing.PropertyReplacer', 'goog.testing.events', 'goog.testing.events.Event', 'goog.testing.jsunit', 'goog.testing.recordFunction'], false);
@@ -765,7 +765,7 @@ goog.addDependency('module/testdata/modA_2.js', ['goog.module.testdata.modA_2'],
 goog.addDependency('module/testdata/modB_1.js', ['goog.module.testdata.modB_1'], ['goog.module.ModuleManager'], false);
 goog.addDependency('net/browserchannel.js', ['goog.net.BrowserChannel', 'goog.net.BrowserChannel.Error', 'goog.net.BrowserChannel.Event', 'goog.net.BrowserChannel.Handler', 'goog.net.BrowserChannel.LogSaver', 'goog.net.BrowserChannel.QueuedMap', 'goog.net.BrowserChannel.ServerReachability', 'goog.net.BrowserChannel.ServerReachabilityEvent', 'goog.net.BrowserChannel.Stat', 'goog.net.BrowserChannel.StatEvent', 'goog.net.BrowserChannel.State', 'goog.net.BrowserChannel.TimingEvent'], ['goog.Uri', 'goog.array', 'goog.asserts', 'goog.debug.TextFormatter', 'goog.events.Event', 'goog.events.EventTarget', 'goog.json', 'goog.json.EvalJsonProcessor', 'goog.log', 'goog.net.BrowserTestChannel', 'goog.net.ChannelDebug', 'goog.net.ChannelRequest', 'goog.net.XhrIo', 'goog.net.tmpnetwork', 'goog.object', 'goog.string', 'goog.structs', 'goog.structs.CircularBuffer'], false);
 goog.addDependency('net/browserchannel_test.js', ['goog.net.BrowserChannelTest'], ['goog.Timer', 'goog.array', 'goog.dom', 'goog.functions', 'goog.json', 'goog.net.BrowserChannel', 'goog.net.ChannelDebug', 'goog.net.ChannelRequest', 'goog.net.tmpnetwork', 'goog.structs.Map', 'goog.testing.MockClock', 'goog.testing.PropertyReplacer', 'goog.testing.asserts', 'goog.testing.jsunit', 'goog.testing.recordFunction'], false);
-goog.addDependency('net/browsertestchannel.js', ['goog.net.BrowserTestChannel'], ['goog.json.EvalJsonProcessor', 'goog.net.ChannelRequest', 'goog.net.ChannelRequest.Error', 'goog.net.tmpnetwork', 'goog.string.Parser'], false);
+goog.addDependency('net/browsertestchannel.js', ['goog.net.BrowserTestChannel'], ['goog.json.EvalJsonProcessor', 'goog.net.ChannelRequest', 'goog.net.ChannelRequest.Error', 'goog.net.tmpnetwork', 'goog.string.ParserPC'], false);
 goog.addDependency('net/bulkloader.js', ['goog.net.BulkLoader'], ['goog.events.EventHandler', 'goog.events.EventTarget', 'goog.log', 'goog.net.BulkLoaderHelper', 'goog.net.EventType', 'goog.net.XhrIo'], false);
 goog.addDependency('net/bulkloader_test.js', ['goog.net.BulkLoaderTest'], ['goog.events.Event', 'goog.events.EventHandler', 'goog.net.BulkLoader', 'goog.net.EventType', 'goog.testing.MockClock', 'goog.testing.jsunit'], false);
 goog.addDependency('net/bulkloaderhelper.js', ['goog.net.BulkLoaderHelper'], ['goog.Disposable'], false);
@@ -804,11 +804,11 @@ goog.addDependency('net/multiiframeloadmonitor_test.js', ['goog.net.MultiIframeL
 goog.addDependency('net/networkstatusmonitor.js', ['goog.net.NetworkStatusMonitor'], ['goog.events.Listenable'], false);
 goog.addDependency('net/networktester.js', ['goog.net.NetworkTester'], ['goog.Timer', 'goog.Uri', 'goog.log'], false);
 goog.addDependency('net/networktester_test.js', ['goog.net.NetworkTesterTest'], ['goog.Uri', 'goog.net.NetworkTester', 'goog.testing.MockClock', 'goog.testing.jsunit'], false);
-goog.addDependency('net/streams/jsonstreamparser.js', ['goog.net.streams.JsonStreamParser'], ['goog.json', 'goog.net.streams.StreamParser'], false);
-goog.addDependency('net/streams/jsonstreamparser_test.js', ['goog.net.streams.JsonStreamParserTest'], ['goog.net.streams.JsonStreamParser', 'goog.testing.asserts', 'goog.testing.jsunit'], false);
+goog.addDependency('net/streams/jsonstreamparser.js', ['goog.net.streams.JsonStreamParserPC'], ['goog.json', 'goog.net.streams.StreamParserPC'], false);
+goog.addDependency('net/streams/jsonstreamparser_test.js', ['goog.net.streams.JsonStreamParserPCTest'], ['goog.net.streams.JsonStreamParserPC', 'goog.testing.asserts', 'goog.testing.jsunit'], false);
 goog.addDependency('net/streams/nodereadablestream.js', ['goog.net.streams.NodeReadableStream'], [], false);
 goog.addDependency('net/streams/streamfactory.js', ['goog.net.streams.createNodeReadableStream'], ['goog.asserts', 'goog.net.XhrIo', 'goog.net.streams.NodeReadableStream'], false);
-goog.addDependency('net/streams/streamparser.js', ['goog.net.streams.StreamParser'], [], false);
+goog.addDependency('net/streams/streamparser.js', ['goog.net.streams.StreamParserPC'], [], false);
 goog.addDependency('net/testdata/jsloader_test1.js', ['goog.net.testdata.jsloader_test1'], [], false);
 goog.addDependency('net/testdata/jsloader_test2.js', ['goog.net.testdata.jsloader_test2'], [], false);
 goog.addDependency('net/testdata/jsloader_test3.js', ['goog.net.testdata.jsloader_test3'], [], false);
@@ -946,7 +946,7 @@ goog.addDependency('string/linkify.js', ['goog.string.linkify'], ['goog.string']
 goog.addDependency('string/linkify_test.js', ['goog.string.linkifyTest'], ['goog.dom.TagName', 'goog.string', 'goog.string.linkify', 'goog.testing.dom', 'goog.testing.jsunit'], false);
 goog.addDependency('string/newlines.js', ['goog.string.newlines', 'goog.string.newlines.Line'], ['goog.array'], false);
 goog.addDependency('string/newlines_test.js', ['goog.string.newlinesTest'], ['goog.string.newlines', 'goog.testing.jsunit'], false);
-goog.addDependency('string/parser.js', ['goog.string.Parser'], [], false);
+goog.addDependency('string/parser.js', ['goog.string.ParserPC'], [], false);
 goog.addDependency('string/path.js', ['goog.string.path'], ['goog.array', 'goog.string'], false);
 goog.addDependency('string/path_test.js', ['goog.string.pathTest'], ['goog.string.path', 'goog.testing.jsunit'], false);
 goog.addDependency('string/string.js', ['goog.string', 'goog.string.Unicode'], [], false);
@@ -1136,7 +1136,7 @@ goog.addDependency('tweak/entries_test.js', ['goog.tweak.BaseEntryTest'], ['goog
 goog.addDependency('tweak/registry.js', ['goog.tweak.Registry'], ['goog.array', 'goog.asserts', 'goog.log', 'goog.string', 'goog.tweak.BasePrimitiveSetting', 'goog.tweak.BaseSetting', 'goog.tweak.BooleanSetting', 'goog.tweak.NumericSetting', 'goog.tweak.StringSetting', 'goog.uri.utils'], false);
 goog.addDependency('tweak/registry_test.js', ['goog.tweak.RegistryTest'], ['goog.asserts.AssertionError', 'goog.testing.jsunit', 'goog.tweak', 'goog.tweak.testhelpers'], false);
 goog.addDependency('tweak/testhelpers.js', ['goog.tweak.testhelpers'], ['goog.tweak', 'goog.tweak.BooleanGroup', 'goog.tweak.BooleanInGroupSetting', 'goog.tweak.BooleanSetting', 'goog.tweak.ButtonAction', 'goog.tweak.NumericSetting', 'goog.tweak.Registry', 'goog.tweak.StringSetting'], false);
-goog.addDependency('tweak/tweak.js', ['goog.tweak', 'goog.tweak.ConfigParams'], ['goog.asserts', 'goog.tweak.BaseSetting', 'goog.tweak.BooleanGroup', 'goog.tweak.BooleanInGroupSetting', 'goog.tweak.BooleanSetting', 'goog.tweak.ButtonAction', 'goog.tweak.NumericSetting', 'goog.tweak.Registry', 'goog.tweak.StringSetting'], false);
+goog.addDependency('tweak/tweak.js', ['goog.tweak', 'goog.tweak.ConfigPCParams'], ['goog.asserts', 'goog.tweak.BaseSetting', 'goog.tweak.BooleanGroup', 'goog.tweak.BooleanInGroupSetting', 'goog.tweak.BooleanSetting', 'goog.tweak.ButtonAction', 'goog.tweak.NumericSetting', 'goog.tweak.Registry', 'goog.tweak.StringSetting'], false);
 goog.addDependency('tweak/tweakui.js', ['goog.tweak.EntriesPanel', 'goog.tweak.TweakUi'], ['goog.array', 'goog.asserts', 'goog.dom', 'goog.dom.TagName', 'goog.dom.safe', 'goog.html.SafeHtml', 'goog.object', 'goog.string.Const', 'goog.style', 'goog.tweak', 'goog.tweak.BaseEntry', 'goog.tweak.BooleanGroup', 'goog.tweak.BooleanInGroupSetting', 'goog.tweak.BooleanSetting', 'goog.tweak.ButtonAction', 'goog.tweak.NumericSetting', 'goog.tweak.StringSetting', 'goog.ui.Zippy', 'goog.userAgent'], false);
 goog.addDependency('tweak/tweakui_test.js', ['goog.tweak.TweakUiTest'], ['goog.dom', 'goog.dom.TagName', 'goog.string', 'goog.testing.jsunit', 'goog.tweak', 'goog.tweak.TweakUi', 'goog.tweak.testhelpers'], false);
 goog.addDependency('ui/abstractspellchecker.js', ['goog.ui.AbstractSpellChecker', 'goog.ui.AbstractSpellChecker.AsyncResult'], ['goog.a11y.aria', 'goog.array', 'goog.asserts', 'goog.dom', 'goog.dom.InputType', 'goog.dom.NodeType', 'goog.dom.TagName', 'goog.dom.classlist', 'goog.dom.selection', 'goog.events', 'goog.events.Event', 'goog.events.EventType', 'goog.math.Coordinate', 'goog.spell.SpellCheck', 'goog.structs.Set', 'goog.style', 'goog.ui.Component', 'goog.ui.MenuItem', 'goog.ui.MenuSeparator', 'goog.ui.PopupMenu'], false);

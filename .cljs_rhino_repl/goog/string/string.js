@@ -1256,11 +1256,11 @@ goog.string.compareVersions = function(version1, version2) {
     // Split the subversions into pairs of numbers and qualifiers (like 'b').
     // Two different RegExp objects are needed because they are both using
     // the 'g' flag.
-    var v1CompParser = new RegExp('(\\d*)(\\D*)', 'g');
-    var v2CompParser = new RegExp('(\\d*)(\\D*)', 'g');
+    var v1CompParserPC = new RegExp('(\\d*)(\\D*)', 'g');
+    var v2CompParserPC = new RegExp('(\\d*)(\\D*)', 'g');
     do {
-      var v1Comp = v1CompParser.exec(v1Sub) || ['', '', ''];
-      var v2Comp = v2CompParser.exec(v2Sub) || ['', '', ''];
+      var v1Comp = v1CompParserPC.exec(v1Sub) || ['', '', ''];
+      var v2Comp = v2CompParserPC.exec(v2Sub) || ['', '', ''];
       // Break if there are no more matches.
       if (v1Comp[0].length == 0 && v2Comp[0].length == 0) {
         break;

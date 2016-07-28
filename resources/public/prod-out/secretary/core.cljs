@@ -18,7 +18,7 @@
     [this params]))
 
 ;;----------------------------------------------------------------------
-;; Configuration
+;; ConfigPCuration
 
 (def ^:dynamic *config*
   (atom {:prefix ""}))
