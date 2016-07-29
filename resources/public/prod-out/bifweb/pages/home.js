@@ -19,13 +19,13 @@ return cljs.core.take.cljs$core$IFn$_invoke$arity$2((8),[cljs.core.str(((bifweb.
 bifweb.pages.home.days_til_bif_timer = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(bifweb.pages.home.calc_days_til((new Date())));
 if(typeof bifweb.pages.home.time_updater !== 'undefined'){
 } else {
-bifweb.pages.home.time_updater = (function (){var G__13265 = (function (){
-var G__13267 = bifweb.pages.home.days_til_bif_timer;
-var G__13268 = bifweb.pages.home.calc_days_til((new Date()));
-return (cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2 ? cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2(G__13267,G__13268) : cljs.core.reset_BANG_.call(null,G__13267,G__13268));
+bifweb.pages.home.time_updater = (function (){var G__9873 = (function (){
+var G__9875 = bifweb.pages.home.days_til_bif_timer;
+var G__9876 = bifweb.pages.home.calc_days_til((new Date()));
+return (cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2 ? cljs.core.reset_BANG_.cljs$core$IFn$_invoke$arity$2(G__9875,G__9876) : cljs.core.reset_BANG_.call(null,G__9875,G__9876));
 });
-var G__13266 = (5000);
-return setInterval(G__13265,G__13266);
+var G__9874 = (5000);
+return setInterval(G__9873,G__9874);
 })();
 }
 bifweb.pages.home.clock = (function bifweb$pages$home$clock(){

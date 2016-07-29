@@ -21,26 +21,26 @@ var quests = cljs.core.cst$kw$questions.cljs$core$IFn$_invoke$arity$1(topic_sect
 return ((function (topic,quests){
 return (function (){
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$col_DASH_md_DASH_12,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$class,"faq-topic"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h2,topic], null),(function (){var iter__6928__auto__ = ((function (topic,quests){
-return (function bifweb$pages$faq$markup_topic_$_iter__13235(s__13236){
+return (function bifweb$pages$faq$markup_topic_$_iter__9845(s__9846){
 return (new cljs.core.LazySeq(null,((function (topic,quests){
 return (function (){
-var s__13236__$1 = s__13236;
+var s__9846__$1 = s__9846;
 while(true){
-var temp__4657__auto__ = cljs.core.seq(s__13236__$1);
+var temp__4657__auto__ = cljs.core.seq(s__9846__$1);
 if(temp__4657__auto__){
-var s__13236__$2 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__13236__$2)){
-var c__6926__auto__ = cljs.core.chunk_first(s__13236__$2);
+var s__9846__$2 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__9846__$2)){
+var c__6926__auto__ = cljs.core.chunk_first(s__9846__$2);
 var size__6927__auto__ = cljs.core.count(c__6926__auto__);
-var b__13238 = cljs.core.chunk_buffer(size__6927__auto__);
-if((function (){var i__13237 = (0);
+var b__9848 = cljs.core.chunk_buffer(size__6927__auto__);
+if((function (){var i__9847 = (0);
 while(true){
-if((i__13237 < size__6927__auto__)){
-var quest = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__6926__auto__,i__13237);
-cljs.core.chunk_append(b__13238,cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_question,quest], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$question.cljs$core$IFn$_invoke$arity$1(quest)], null)));
+if((i__9847 < size__6927__auto__)){
+var quest = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__6926__auto__,i__9847);
+cljs.core.chunk_append(b__9848,cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_question,quest], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$question.cljs$core$IFn$_invoke$arity$1(quest)], null)));
 
-var G__13241 = (i__13237 + (1));
-i__13237 = G__13241;
+var G__9851 = (i__9847 + (1));
+i__9847 = G__9851;
 continue;
 } else {
 return true;
@@ -48,13 +48,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__13238),bifweb$pages$faq$markup_topic_$_iter__13235(cljs.core.chunk_rest(s__13236__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__9848),bifweb$pages$faq$markup_topic_$_iter__9845(cljs.core.chunk_rest(s__9846__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__13238),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__9848),null);
 }
 } else {
-var quest = cljs.core.first(s__13236__$2);
-return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_question,quest], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$question.cljs$core$IFn$_invoke$arity$1(quest)], null)),bifweb$pages$faq$markup_topic_$_iter__13235(cljs.core.rest(s__13236__$2)));
+var quest = cljs.core.first(s__9846__$2);
+return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_question,quest], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$question.cljs$core$IFn$_invoke$arity$1(quest)], null)),bifweb$pages$faq$markup_topic_$_iter__9845(cljs.core.rest(s__9846__$2)));
 }
 } else {
 return null;
@@ -76,25 +76,25 @@ bifweb.util.set_title_BANG_("Buffalo Infringement Festival - FAQs");
 
 new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$col_DASH_md_DASH_12,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$row,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$h1,"FAQs"], null)], null)], null);
 
-return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$class,"faq-topics-list"], null),(function (){var iter__6928__auto__ = (function bifweb$pages$faq$faq_page_$_iter__13248(s__13249){
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$ul,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$class,"faq-topics-list"], null),(function (){var iter__6928__auto__ = (function bifweb$pages$faq$faq_page_$_iter__9858(s__9859){
 return (new cljs.core.LazySeq(null,(function (){
-var s__13249__$1 = s__13249;
+var s__9859__$1 = s__9859;
 while(true){
-var temp__4657__auto__ = cljs.core.seq(s__13249__$1);
+var temp__4657__auto__ = cljs.core.seq(s__9859__$1);
 if(temp__4657__auto__){
-var s__13249__$2 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_(s__13249__$2)){
-var c__6926__auto__ = cljs.core.chunk_first(s__13249__$2);
+var s__9859__$2 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__9859__$2)){
+var c__6926__auto__ = cljs.core.chunk_first(s__9859__$2);
 var size__6927__auto__ = cljs.core.count(c__6926__auto__);
-var b__13251 = cljs.core.chunk_buffer(size__6927__auto__);
-if((function (){var i__13250 = (0);
+var b__9861 = cljs.core.chunk_buffer(size__6927__auto__);
+if((function (){var i__9860 = (0);
 while(true){
-if((i__13250 < size__6927__auto__)){
-var topic = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__6926__auto__,i__13250);
-cljs.core.chunk_append(b__13251,cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_topic,topic], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$topic.cljs$core$IFn$_invoke$arity$1(topic)], null)));
+if((i__9860 < size__6927__auto__)){
+var topic = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__6926__auto__,i__9860);
+cljs.core.chunk_append(b__9861,cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_topic,topic], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$topic.cljs$core$IFn$_invoke$arity$1(topic)], null)));
 
-var G__13254 = (i__13250 + (1));
-i__13250 = G__13254;
+var G__9864 = (i__9860 + (1));
+i__9860 = G__9864;
 continue;
 } else {
 return true;
@@ -102,13 +102,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons(cljs.core.chunk(b__13251),bifweb$pages$faq$faq_page_$_iter__13248(cljs.core.chunk_rest(s__13249__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__9861),bifweb$pages$faq$faq_page_$_iter__9858(cljs.core.chunk_rest(s__9859__$2)));
 } else {
-return cljs.core.chunk_cons(cljs.core.chunk(b__13251),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__9861),null);
 }
 } else {
-var topic = cljs.core.first(s__13249__$2);
-return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_topic,topic], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$topic.cljs$core$IFn$_invoke$arity$1(topic)], null)),bifweb$pages$faq$faq_page_$_iter__13248(cljs.core.rest(s__13249__$2)));
+var topic = cljs.core.first(s__9859__$2);
+return cljs.core.cons(cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [bifweb.pages.faq.markup_topic,topic], null),new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,cljs.core.cst$kw$topic.cljs$core$IFn$_invoke$arity$1(topic)], null)),bifweb$pages$faq$faq_page_$_iter__9858(cljs.core.rest(s__9859__$2)));
 }
 } else {
 return null;
