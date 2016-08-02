@@ -16,19 +16,35 @@
         (.getTime start-time)
         (.getTime datenow))
       (/ day)
+      ;(.floor js/Math)
       (str))
-    (take 8)))
+    (take 1)))
 
-(def days-til-bif-timer (r/atom (calc-days-til (js/Date.))))
+(defn calc-day-of [datenow]
+ (->>
+  (->
+   (-
+    (.getTime datenow)
+    (.getTime start-time))
+   (/ day)
+   (str))
+  (take 8)))
+
+;(def days-til-bif-timer (r/atom (calc-days-til (js/Date.))))
+(def day-of-bif-timer (r/atom (calc-day-of (js/Date.))))
 
 (defonce time-updater (js/setInterval
-                       #(reset! days-til-bif-timer (calc-days-til (js/Date.))) 5000))
+                       ; #(reset! days-til-bif-timer (calc-days-til (js/Date.))) 5000))
+                       #(reset! day-of-bif-timer (calc-day-of (js/Date.))) 5000))
 
 
 (defn clock []
   (fn []
-    (let [time-str @days-til-bif-timer]
-        [:span time-str])))
+    (let [time-str @day-of-bif-timer]
+     [:p
+      "This is day "
+      [:span time-str]
+      " of the 2016 Buffalo Infringement Festival!"])))
 
 (defn home-page []
   (fn []
@@ -43,18 +59,13 @@
        [:div.row
          {:class "box featured-1"}
 
-         [:h2 "Find us on social media!"]
-         [:p "Promote your shows. Find things to do during the festival. Make new friends."]
-         [common/social-links]]
+         [:h2 "Infringement Schedule"]
+         [:p [:a {:href common/schedule-href} "The schedule is now live."] " The schedule will appear as an insert in the Public on Wednesday July 27."]]
 
        [:div.row
          {:class "box featured-2"}
-
-         [:h2 "Infringement Draws Near!"]
-         [:p
-           "Just "
-           [clock]
-           " days until Opening Ceremonies."]]
+         [:h2 "Infringement Draws Near!"
+          [clock]]]
 
        [:div.row
          {:class "box"}
@@ -87,9 +98,9 @@
 
        [:div.row
          {:class "box featured-2"}
-
-         [:h2 "Infringement Schedule"]
-         [:p [:a {:href common/schedule-href} "The schedule is now live."] " The schedule will appear as an insert in the Public on Wednesday July 27."]]
+         [:h2 "Find us on social media!"]
+         [:p "Promote your shows. Find things to do during the festival. Make new friends."
+          [common/social-links]]]
 
        [:div.row
          {:class "box"}
