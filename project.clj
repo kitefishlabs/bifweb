@@ -8,13 +8,14 @@
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.7.228"]
-                 [org.clojure/core.async "0.2.374"
-                  :exclusions [org.clojure/tools.reader]]
-                 [reagent "0.5.1"]
+                 [org.clojure/core.async "0.2.374" :exclusions [org.clojure/tools.reader]]
+                 [reagent "0.6.1" :exclusions [org.clojure/tools.reader cljsjs/react cljsjs/react-dom]]
                  [secretary "1.2.3"]
                  [cljs-ajax "0.5.4"]
                  [prismatic/dommy "1.1.0"]
-                 [hickory "0.6.0"]]
+                 [hickory "0.6.0"]
+                 [cljs-react-material-ui "0.2.38"]
+                 [enlive "1.1.6"]]
 
   :plugins [[lein-figwheel "0.5.2"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]

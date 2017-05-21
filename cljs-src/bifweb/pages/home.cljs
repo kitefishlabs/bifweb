@@ -1,129 +1,73 @@
 (ns bifweb.pages.home
-  (:require [reagent.core :as r]
-            [bifweb.util :refer [set-title!]]
+  (:require [cljsjs.material-ui]
+            [cljs-react-material-ui.core :refer [get-mui-theme color]]
+            [cljs-react-material-ui.reagent :as ui]
+            [cljs-react-material-ui.icons :as ic]
+            [reagent.core :as r]
+            [bifweb.util :refer [set-title! standard-col-class]]
             [bifweb.session :as session]
             [bifweb.pages.common :as common]))
 
-(defonce day 86400000)
-
-(defonce start-time (js/Date. 2016 6 28 20 0 0))
-
-;(defonce timer (r/atom (js/Date.)))
-(defn calc-days-til [datenow]
-  (->>
-    (->
-      (-
-        (.getTime start-time)
-        (.getTime datenow))
-      (/ day)
-      ;(.floor js/Math)
-      (str))
-    (take 1)))
-
-(defn calc-day-of [datenow]
- (->>
-  (->
-   (-
-    (.getTime datenow)
-    (.getTime start-time))
-   (/ day)
-   (str))
-  (take 8)))
-
-;(def days-til-bif-timer (r/atom (calc-days-til (js/Date.))))
-(def day-of-bif-timer (r/atom (calc-day-of (js/Date.))))
-
-(defonce time-updater (js/setInterval
-                       ; #(reset! days-til-bif-timer (calc-days-til (js/Date.))) 5000))
-                       #(reset! day-of-bif-timer (calc-day-of (js/Date.))) 5000))
-
-
-(defn clock []
-  (fn []
-    (let [time-str @day-of-bif-timer]
-     [:p
-      "This is day "
-      [:span time-str]
-      " of the 2016 Buffalo Infringement Festival!"])))
 
 (defn home-page []
   (fn []
     (set-title! "Buffalo Infringement Festival")
+    [:div
+      [ui/paper
+        standard-col-class
 
-    [common/social-links]
+        [:div.row
+          [:h2 "Proposal Submission Closed"]
+          [:img
+            {:src "img/Cat_cupcake.jpg"
+             :style {:width "60px" :float "left"}}]
+          [:p "The deadline for 2017 Infringement Festival proposals has passed. Thank you to all who applied."]
+          [:p "To edit information in a submitted proposal, " [:a {:href "db2/index.php"} "login here."]]
+          [:p "This year's dates: " [:strong "Thursday July 27 - Sunday August 6, 2017"]]]
 
-    [:div.row
+        [:div.row
+          [:h2 "Upcoming Events & Meetings"]
+          [:div.box-text
+             [:ul
 
-     [:div.left-column.col-md-6
+               [:li "Sat Apr 1, 11:59pm - Final Deadline for Proposals"]
+               [:li "Thu Apr 13, 7:30pm - PR @ Ol' Wondermoth"]
+               [:li "Mon Apr 17, 6:30pm - Schedulers"]
+               [:li "Mon Apr 24, 6:30pm - Schedulers, as needed"]
+               [:li "Mon May 1 - Scheduling confirmations begin"]
+               [:li "Mon May 8, 6:30pm - Schedulers, as needed"]
+               [:li "Mon May 15, 6:30pm - Organizers Meeting @ Ol' Wondermoth"]
+               [:li "Wed Jun 8 - Scheduling finalized with artists"]
+               [:li "Wed Jun 15 - Schedule published online."]
+               [:li "Mon Jun 26, 6:30pm - Organizers Meeting @ Ol' Wondermoth"]
+               [:li "July - General meeting and press conferences."]
+               [:li "Mon Jul 24, 6:00pm - Pre-festival organizers dinner/meeting."]
+               [:li "Wed Jul 26 - Schedule published in the Public."]]]]
 
-       [:div.row
-         {:class "box featured-1"}
+        [:div.row
+          [:h2 "Volunteer"]
+          [:p "Email us at "
+            [:a {:href "mailto:info@infringebuffalo.org?Subject=Volunteer%20at%20BIF%202017"} "info@infringebuffalo.org"]
+            ". We need people to help run shows, to help us publicize the festival, hang posters, and other tasks."]]
 
-         [:h2 "Infringement Schedule"]
-         [:p [:a {:href common/schedule-href} "The schedule is now live."] " The schedule will appear as an insert in the Public on Wednesday July 27."]]
+        [:div.row
+          [:h2 "Venues"]
+          [:p "In 2016, we had close to 100 venues. New venues include Amity Club, Merriweather Library, Cafeology, Daily Planet."]]
 
-       [:div.row
-         {:class "box featured-2"}
-         [:h2 "Infringement Draws Near!"
-          [clock]]]
+        [:div.row
+          [:h2 "Find us on social media!"]
+          [:p "Promote your shows. Find things to do during the festival. Discover artists."]
+          [common/social-links]]
 
-       [:div.row
-         {:class "box"}
+        [:div.row
+          [:h2 "Want to know more?"]
+          [:p "Check out our "
+            [:a {:href "#/faq" :alt "faq"} "FAQ"]
+            ". We try to answer many of your questions there."]]
 
-         [:h2 "Organizers Meetings"]
-         [:div.box-text
-           [:ul
-             [:li "Tue July 26, 7pm - Organizers @ Wondermoth"]
-             [:li "Thu July 28, 8pm - Opening Ceremonies, 8pm @ Nietzsche's"]]]]
-
-        ;[:div.row
-        ;	{:class "box"}
-        ;
-        ; [:h2 ""]
-        ;	[:p ""]]
-
-       [:div.row
-         {:class "box"}
-
-         [:h2 "Venues"]
-         [:p "In 2016, we have close to 100 venues. New venues this year include Amity Club, Merriweather Library, Cafeology, Daily Planet "]]
-
-       [:div.row
-         {:class "box"}
-
-         [:h2 "Thanks for applying"]
-         [:p "Submissions are now closed. This year we had over 350 applicants. Next year's application will be due May 1."]]]
-
-     [:div.right-column.col-md-6
-
-       [:div.row
-         {:class "box featured-2"}
-         [:h2 "Find us on social media!"]
-         [:p "Promote your shows. Find things to do during the festival. Make new friends."
-          [common/social-links]]]
-
-       [:div.row
-         {:class "box"}
-
-         [:h2 "Want to know more?"]
-
-         [:p "Check out our "
-          [:a {:href "#/faq" :alt "faq"} "FAQ"]
-          ". We try to answer many of your questions there."]]
-
-       [:div.row
-         {:class "box"}
-
-         [:h2 "Volunteer"]
-         [:p "Email us at "
-           [:a {:href "mailto:info@infringebuffalo.org?Subject=Volunteer%20at%20BIF%202016"} "info@infringebuffalo.org"]
-           ". We need people to help run shows, to help us publicize the festival, hang posters, and other tasks."]]
-
-       [:div.row
-         {:class "box"}
-
-         [:h2 "About Infringement"]
-         [:p
-           "The 2016 Festival is the 13th running of a festival that has its roots in Montreal, QC and beyond. "
-           [:a {:href "#/about"} "Read more"]
-           " about the history, funders, and founding documents of the Buffalo Infringement Festival."]]]]))
+        [:div.row
+          [:h2 "About Infringement"]
+          [:p
+            "The 2017 Festival is the 14th running of a festival that has its roots in Montreal, QC and beyond. "
+            [:a {:href "#/about"} "Read more"]
+            " about the history, funders, and founding documents of the Buffalo Infringement Festival."]]]]))

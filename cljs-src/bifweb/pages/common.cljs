@@ -1,17 +1,20 @@
 (ns bifweb.pages.common
-  (:require [reagent.core :as reagent :refer [atom]]
+  (:require ;[cljs-react-material-ui.core :refer [get-mui-theme color]]
+            ;[cljs-react-material-ui.reagent :as ui]
+            ;[cljs-react-material-ui.icons :as ic]
+            [reagent.core :as reagent :refer [atom]]
             [secretary.core :as secretary :refer-macros [defroute]]
             [bifweb.session :as session])
   (:import goog.History))
 
-(def schedule-href "schedule.php")
+(def proposal-href "db2/Infringement_Proposal.php")
 (def db-href "db2/")
 
 
 (defn social-link [url icn]
   (fn []
     [:a {:href url :class "social-link"}
-      [:i {:class (str "fa " icn " fa-2x fa-fw")}]]))
+      [:i {:class (str "fa " icn " fa fa-fw")}]]))
 
 
 (defn social-links []
@@ -61,18 +64,17 @@
          [:a.navbar-brand {:href "#/"}
           [:img
            { :id "sitelogo"
-             :src "/img/bif_2016_header_center.png"
+             :width "32px"
+             :src "/img/bif_2017_header_center.png"
              :alt "bif-icon"}]]]
         [:div.navbar-collapse.collapse
          (when-not @collapsed? {:class "in"})
          [:ul.nav.navbar-nav
           [nav-link "#/" "Home" :home collapsed?]
-          [nav-link schedule-href "Schedule" :schedulephp collapsed?]
-          ;[nav-link "#/schedule" "Experimental" :schedule collapsed?]
+          [nav-link proposal-href "Submit a Proposal" :proposal collapsed?]
           [nav-link "#/faq" "FAQ" :faq collapsed?]
           [nav-link "#/about" "About" :about collapsed?]
           [nav-link "#/contact" "Contact" :contact collapsed?]
-          ;[nav-link "#/forum" "Forum" :forum collapsed?]
           [nav-link db-href "DB" :database collapsed?]]]]])))
 
 (defn header-jumbotron []
@@ -88,6 +90,6 @@
             [:img
               { :class "banner"
                 :id "banner-right"
-                :src "/img/bif_2016_header_center.png"}]]]]]))
+                :src "/img/bif_2016_header_center.png"}]
 
-            ;[social-links]]]]]))
+           [social-links]]]]]))

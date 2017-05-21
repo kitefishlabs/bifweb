@@ -142,7 +142,5 @@
       page-load-time (- now js/performance.timing.navigationStart)]
     (js/console.log (str "User-perceived page loading time:" page-load-time))))
 
-; function onLoad() {
-;                    var now = new Date().getTime();
-;                    var page_load_time = now - performance.timing.navigationStart;
-;                    console.log("User-perceived page loading time: " + page_load_time)};
+(def standard-col-class
+  {:class "col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 pad-10 mar-top-20"})
