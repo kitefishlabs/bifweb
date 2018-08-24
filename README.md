@@ -1,6 +1,6 @@
 # bifweb
 
-FIXME: Write a one-line description of your library/project.
+This was the frontend for the main part of the festival site from 2017. No longer used or maintained. If you are interested in The festival's current site and code, check out https://github.com/davepape/bif2.
 
 ## Overview
 
